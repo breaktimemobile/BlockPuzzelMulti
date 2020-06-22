@@ -3092,7 +3092,7 @@ public class UIManager : MonoBehaviour
 #else
         Txt_Google_Title_Login.gameObject.SetActive(false);
         Txt_Google_Title_Logout.gameObject.SetActive(false);
-        Txt_IOS_Title_Login.gameObject.SetActive(!Social.localUser.authenticated);
+        Txt_Ios_Title_Login.gameObject.SetActive(!Social.localUser.authenticated);
 #endif
 
     }

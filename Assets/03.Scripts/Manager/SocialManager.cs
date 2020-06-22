@@ -9,7 +9,9 @@ using System.Security.Cryptography.X509Certificates;
 using System.Net.Security;
 using System.Net;
 using System.Collections;
+#if UNITY_IOS
 using UnityEngine.SocialPlatforms.GameCenter;
+#endif
 
 public class SocialManager : MonoBehaviour
 {
@@ -246,7 +248,7 @@ public class SocialManager : MonoBehaviour
         }
     }
     
-    #region Google Cloud Save
+#region Google Cloud Save
 
     public void Player_Data_Save(bool Popup = false)
     {
@@ -351,11 +353,11 @@ public class SocialManager : MonoBehaviour
         }
     }
 
-    #endregion
+#endregion
 
-    #region Google Cloud Load
+#region Google Cloud Load
 
-    #region old
+#region old
     public void Player_Data_Load()
     {
 
@@ -429,7 +431,7 @@ public class SocialManager : MonoBehaviour
 
     }
 
-    #endregion
+#endregion
 
     public void Player_Data_Load(string str)
     {
@@ -449,7 +451,7 @@ public class SocialManager : MonoBehaviour
 
     }
 
-    #endregion
+#endregion
 
 
     private const string title_KR = "블록 퍼즐 보석 멀티플레이";
