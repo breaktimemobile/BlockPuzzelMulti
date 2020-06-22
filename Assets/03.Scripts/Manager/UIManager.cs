@@ -64,6 +64,7 @@ public class UIManager : MonoBehaviour
     private Text Txt_Dia;
     public Button Btn_PushGift;
     private Button Btn_Achievements;
+    private Button Btn_Ios;
 
 
     #endregion
@@ -324,6 +325,7 @@ public class UIManager : MonoBehaviour
     private Button Btn_Google_Login;
     private Button Btn_Google_Logout;
     private GameObject Txt_Google_Title_Login;
+    private GameObject Txt_Ios_Title_Login;
     private GameObject Txt_Google_Title_Logout;
     #endregion
 
@@ -594,6 +596,7 @@ public class UIManager : MonoBehaviour
         Btn_Review = Main.transform.Find("Btn_Review").GetComponent<Button>();
         Btn_PushGift = Main.transform.Find("Btn_PushGift").GetComponent<Button>();
         Btn_Achievements = Main.transform.Find("Btn_Achievements").GetComponent<Button>();
+        Btn_Ios = Main.transform.Find("Btn_Ios").GetComponent<Button>();
 
         #endregion
 
@@ -882,6 +885,7 @@ public class UIManager : MonoBehaviour
         Btn_Google_Logout = GooglePopup.transform.Find("Btn_Google_Logout").GetComponent<Button>();
 
         Txt_Google_Title_Login = GooglePopup.transform.Find("Txt_Google_Title_Login").gameObject;
+        Txt_Ios_Title_Login = GooglePopup.transform.Find("Txt_Ios_Title_Login").gameObject;
         Txt_Google_Title_Logout = GooglePopup.transform.Find("Txt_Google_Title_Logout").gameObject;
         #endregion
 
@@ -1119,6 +1123,14 @@ public class UIManager : MonoBehaviour
         Btn_Google.onClick.AddListener(() => FireBaseManager.Instance.LogEvent("Main_Google_Login_Btn"));
         Btn_Google.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_circle));
 
+        Btn_Ios.onClick.AddListener(() => Set_Google_Txt());
+        Btn_Ios.onClick.AddListener(() => PushPopup(GooglePopup));
+        Btn_Ios.onClick.AddListener(() => FireBaseManager.Instance.LogEvent("Main_Google_Login_Btn"));
+        Btn_Ios.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_circle));
+
+
+
+        
         Btn_Gift.onClick.AddListener(() => Get_Gift_Item());
 
 
@@ -1668,6 +1680,8 @@ public class UIManager : MonoBehaviour
         Set_Gift_Time();
         Txt_Setting_Ver.text = "Ver " + Application.version;
 
+        Btn_Google.gameObject.SetActive(Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.WindowsEditor);
+        Btn_Ios.gameObject.SetActive(Application.platform == RuntimePlatform.IPhonePlayer || Application.platform == RuntimePlatform.OSXEditor);
     }
 
     /// <summary>
@@ -3068,8 +3082,19 @@ public class UIManager : MonoBehaviour
         Btn_Setting_Google_Logout.gameObject.SetActive(Social.localUser.authenticated);
         Btn_Google_Login.gameObject.SetActive(!Social.localUser.authenticated);
         Btn_Google_Logout.gameObject.SetActive(Social.localUser.authenticated);
+
+#if UNITY_ANDROID
+
         Txt_Google_Title_Login.gameObject.SetActive(!Social.localUser.authenticated);
         Txt_Google_Title_Logout.gameObject.SetActive(Social.localUser.authenticated);
+        Txt_Ios_Title_Login.gameObject.SetActive(false);
+
+#else
+        Txt_Google_Title_Login.gameObject.SetActive(false);
+        Txt_Google_Title_Logout.gameObject.SetActive(false);
+        Txt_IOS_Title_Login.gameObject.SetActive(!Social.localUser.authenticated);
+#endif
+
     }
 
     public void Set_Music_Sprite()
@@ -3421,7 +3446,7 @@ public class UIManager : MonoBehaviour
 
     }
 
-    #region 데일리 기프트
+#region 데일리 기프트
 
     IEnumerator Co_Gift_Timer()
     {
@@ -3619,9 +3644,9 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    #endregion
+#endregion
 
-    #region 튜토리얼
+#region 튜토리얼
 
     public int tuto_Step = 0;
 
@@ -3669,7 +3694,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    #endregion
+#endregion
 
     /// <summary>
     /// 게임 중 아이템이 없을때
@@ -3711,7 +3736,7 @@ public class UIManager : MonoBehaviour
         PopPopup();
     }
 
-    #region 멀티 플레이
+#region 멀티 플레이
 
     public void Set_Multi_Player(bool isPlayer, string str_player = "unKnow")
     {
@@ -3983,10 +4008,10 @@ public class UIManager : MonoBehaviour
 
     }
 
-    #endregion
+#endregion
 
 
-    #region 버튼 이벤트
+#region 버튼 이벤트
 
     public void Btn_Pointer_Down(Transform obj)
     {
@@ -3998,7 +4023,7 @@ public class UIManager : MonoBehaviour
         obj.localScale = Vector3.one;
     }
 
-    #endregion
+#endregion
 
     public void Toggle_Check(Toggle toggle)
     {
@@ -4029,7 +4054,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    #region 튜토리얼 
+#region 튜토리얼 
 
     public void Touch_active(bool active)
     {
@@ -4040,9 +4065,9 @@ public class UIManager : MonoBehaviour
 
     }
 
-    #endregion
+#endregion
 
-    #region 스테이지 별 애니메이션
+#region 스테이지 별 애니메이션
 
     IEnumerator Co_Over_Star(int total)
     {
@@ -4059,7 +4084,7 @@ public class UIManager : MonoBehaviour
 
     }
 
-    #endregion
+#endregion
 
     public bool Check_Network()
     {
