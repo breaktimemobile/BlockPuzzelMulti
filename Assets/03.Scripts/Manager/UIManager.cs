@@ -8,6 +8,10 @@ using Random = UnityEngine.Random;
 using Photon.Pun;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
 
+#if UNITU_IOS
+using UnityEngine.iOS;
+#endif
+
 public enum Game_Stat
 {
     Main,
@@ -32,6 +36,7 @@ public enum Enum_Gift
     Shop_Gift
 
 }
+
 public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
@@ -46,7 +51,7 @@ public class UIManager : MonoBehaviour
     private GameObject Game;
     private GameObject Popup;
 
-    #region Main
+#region Main
 
     private Button Btn_Classic;
     private Button Btn_Multi;
@@ -67,11 +72,11 @@ public class UIManager : MonoBehaviour
     private Button Btn_Ios;
 
 
-    #endregion
+#endregion
 
     private Stack<GameObject> stack_Popup = new Stack<GameObject>();
 
-    #region Game
+#region Game
 
     public Button Btn_Puase;
     private GameObject Top_Classic;
@@ -112,9 +117,9 @@ public class UIManager : MonoBehaviour
 
     private Slider Slider_Multi_Time;
 
-    #endregion
+#endregion
 
-    #region Popup
+#region Popup
 
     private GameObject PausePopup;
     private GameObject Over_Popup;
@@ -146,9 +151,9 @@ public class UIManager : MonoBehaviour
     private GameObject BestPopup;
     private GameObject SelectPopup;
 
-    #endregion
+#endregion
 
-    #region PausePopup
+#region PausePopup
 
     private Button Btn_Pause_Music;
     private Button Btn_Pause_Effect;
@@ -158,9 +163,9 @@ public class UIManager : MonoBehaviour
     private Button Btn_Pause_Replay;
     private Button Btn_Pause_Review;
 
-    #endregion
+#endregion
 
-    #region Over_Popup
+#region Over_Popup
 
     private GameObject Over_Classic_0;
     private GameObject Over_Classic_1;
@@ -229,18 +234,18 @@ public class UIManager : MonoBehaviour
     private Text Txt_Over_Timer_1_Score;
     private Text Txt_Over_Timer_1_Best;
 
-    #endregion
+#endregion
 
-    #region StagePopup
+#region StagePopup
 
     private Button Btn_Stage_Back;
     private Transform Tr_Stage_Content;
     private Text Txt_Star_Val;
     private Button Btn_Star_Get;
 
-    #endregion
+#endregion
 
-    #region StageMissionPopup
+#region StageMissionPopup
 
     private List<Button> Btn_Mission_Back = new List<Button>();
     private List<Button> Btn_Stage_Start = new List<Button>();
@@ -259,10 +264,10 @@ public class UIManager : MonoBehaviour
     private Transform Mission_Score;
     private Text Txt_Mission_Score;
 
-    #endregion
+#endregion
 
 
-    #region SettingPopup
+#region SettingPopup
 
     private Button Btn_Setting_Back;
     private Button Btn_Setting_Music;
@@ -278,30 +283,30 @@ public class UIManager : MonoBehaviour
     private Button Btn_Setting_Language;
     private Text Txt_Setting_Ver;
 
-    #endregion
+#endregion
 
-    #region ExitPopup
+#region ExitPopup
 
     private Button Btn_Exit_Ok;
     private Button Btn_Exit_No;
 
-    #endregion
+#endregion
 
-    #region ReviewPopup
+#region ReviewPopup
 
     private Button Btn_Review_Ok;
     private Button Btn_Review_Back;
 
-    #endregion
+#endregion
 
-    #region ShopPopup
+#region ShopPopup
 
     private Button Btn_Shop_Back;
     private Text Txt_Shop_Dia;
 
-    #endregion
+#endregion
 
-    #region HelpPopup
+#region HelpPopup
 
     private Button Btn_Help_Back;
     private Button Btn_Help_Item;
@@ -317,9 +322,9 @@ public class UIManager : MonoBehaviour
     private Button Btn_Help_Service;
     private Button Btn_Help_Privacy;
 
-    #endregion
+#endregion
 
-    #region GooglePopup
+#region GooglePopup
 
     private Button Btn_Google_Back;
     private Button Btn_Google_Login;
@@ -327,9 +332,9 @@ public class UIManager : MonoBehaviour
     private GameObject Txt_Google_Title_Login;
     private GameObject Txt_Ios_Title_Login;
     private GameObject Txt_Google_Title_Logout;
-    #endregion
+#endregion
 
-    #region GiftPopup
+#region GiftPopup
 
     private Image[] Img_Gift;
     private Text[] Txt_Gift_Val;
@@ -339,10 +344,10 @@ public class UIManager : MonoBehaviour
 
     private Animator Anim_Gift;
 
-    #endregion
+#endregion
 
 
-    #region DailyPopup
+#region DailyPopup
 
     private Button Btn_Daily_Back;
     private List<Button> Btn_Day = new List<Button>();
@@ -350,34 +355,34 @@ public class UIManager : MonoBehaviour
     private List<Text> Txt_Daily = new List<Text>();
 
 
-    #endregion
+#endregion
 
-    #region TutoPopup
+#region TutoPopup
 
     private List<GameObject> obj_Tuto = new List<GameObject>();
     private List<List<GameObject>> obj_Tuto_child = new List<List<GameObject>>();
     private List<GameObject> touchs = new List<GameObject>();
 
-    #endregion
+#endregion
 
-    #region TxtPopup
+#region TxtPopup
 
     private GameObject Txt_Saving;
     private GameObject Txt_Save;
     private GameObject Txt_Loading;
     private GameObject Txt_Load;
 
-    #endregion
+#endregion
 
 
-    #region LanguagePopup
+#region LanguagePopup
 
     private Button Btn_Language_Back;
     private Button[] Btn_Languages;
 
-    #endregion
+#endregion
 
-    #region  MultiPopup
+#region  MultiPopup
 
     private Button Btn_Multi_Back;
     private Button Btn_Multi_Dia_1;
@@ -386,9 +391,9 @@ public class UIManager : MonoBehaviour
     public Text Txt_Player_Count;
 
 
-    #endregion
+#endregion
 
-    #region  MatcingPopup
+#region  MatcingPopup
 
     private Button Btn_Matcing_Back;
     private Image Img_Player;
@@ -397,27 +402,27 @@ public class UIManager : MonoBehaviour
     private Text Txt_Enemy_Name;
     private Text Txt_Count;
 
-    #endregion
+#endregion
 
-    #region  MsgPopup
+#region  MsgPopup
 
     private Text Txt_Msg_Exit;
     private Text Txt_Msg_ReMatch;
     private Text Txt_Msg_Cencel;
 
-    #endregion
+#endregion
 
-    #region  PrivacyPopup
+#region  PrivacyPopup
 
     private Button Btn_Privacy_Back;
     private Toggle Toggle_Privacy;
     private Toggle Toggle_service;
     private Button Btn_Privacy;
     private Button Btn_service;
-    #endregion
+#endregion
 
 
-    #region PushGiftPopup
+#region PushGiftPopup
 
     private Image[] Img_Push_Gift;
     private Text[] Txt_Push_Gift_Val;
@@ -427,16 +432,16 @@ public class UIManager : MonoBehaviour
 
     private Animator Anim_Push_Gift;
 
-    #endregion
+#endregion
 
-    #region TutoMsgPopup
+#region TutoMsgPopup
 
     private List<GameObject> Obj_TutoMsg = new List<GameObject>();
     private List<Button> Btn_TutoMsg_Back = new List<Button>();
 
-    #endregion
+#endregion
 
-    #region BestPopup
+#region BestPopup
 
     private Button Btn_Best_Game_01;
     private Button Btn_Best_Game_02;
@@ -444,15 +449,15 @@ public class UIManager : MonoBehaviour
     private Button Btn_Best_Back;
     private Button Btn_Best_Start;
 
-    #endregion
+#endregion
 
-    #region SelectPopup
+#region SelectPopup
 
     private Button Btn_8x8;
     private Button Btn_9x9;
     private Button Btn_Select_Back;
 
-    #endregion
+#endregion
 
 
 
@@ -578,7 +583,7 @@ public class UIManager : MonoBehaviour
         Game = Canvas.Find("Game").gameObject;
         Popup = Canvas.Find("Popup").gameObject;
 
-        #region Main
+#region Main
 
         Btn_Classic = Main.transform.Find("Btn_Classic").GetComponent<Button>();
         Btn_Multi = Main.transform.Find("Btn_Multi").GetComponent<Button>();
@@ -598,9 +603,9 @@ public class UIManager : MonoBehaviour
         Btn_Achievements = Main.transform.Find("Btn_Achievements").GetComponent<Button>();
         Btn_Ios = Main.transform.Find("Btn_Ios").GetComponent<Button>();
 
-        #endregion
+#endregion
 
-        #region Game
+#region Game
 
 
         Top_Classic = Game.transform.Find("Top/Top_Classic").gameObject;
@@ -646,9 +651,9 @@ public class UIManager : MonoBehaviour
         Txt_Multi_Enemy = Top_Multi.transform.Find("Obj_Enemy/Txt_Multi_Enemy").GetComponent<Text>();
         Slider_Multi_Time = Top_Multi.transform.Find("Top_Multi_Time/Slider_Multi_Time").GetComponent<Slider>();
 
-        #endregion
+#endregion
 
-        #region Popup
+#region Popup
 
         PausePopup = Popup.transform.Find("PausePopup").gameObject;
         Over_Popup = Popup.transform.Find("Over_Popup").gameObject;
@@ -679,10 +684,10 @@ public class UIManager : MonoBehaviour
         BestPopup = Popup.transform.Find("BestPopup").gameObject;
         SelectPopup = Popup.transform.Find("SelectPopup").gameObject;
 
-        #endregion
+#endregion
 
 
-        #region PausePopup
+#region PausePopup
 
         Btn_Pause_Music = PausePopup.transform.Find("Btn_Pause_Music").GetComponent<Button>();
         Btn_Pause_Effect = PausePopup.transform.Find("Btn_Pause_Effect").GetComponent<Button>();
@@ -692,9 +697,9 @@ public class UIManager : MonoBehaviour
         Btn_Pause_Replay = PausePopup.transform.Find("Btn_Pause_Replay").GetComponent<Button>();
         Btn_Pause_Review = PausePopup.transform.Find("Btn_Pause_Review").GetComponent<Button>();
 
-        #endregion
+#endregion
 
-        #region Over_Popup
+#region Over_Popup
 
         Pop = Over_Popup.transform.Find("Pop").GetComponent<Animator>();
 
@@ -772,18 +777,18 @@ public class UIManager : MonoBehaviour
         Txt_Over_Timer_1_Best = Over_Timer_1.transform.Find("Txt_Over_Timer_1_Best").GetComponent<Text>();
 
 
-        #endregion
+#endregion
 
-        #region StagePopup
+#region StagePopup
 
         Btn_Stage_Back = StagePopup.transform.Find("Btn_Stage_Back").GetComponent<Button>();
         Tr_Stage_Content = StagePopup.transform.Find("Scroll View/Viewport/Tr_Stage_Content");
         Txt_Star_Val = StagePopup.transform.Find("Img_Star_Bg/Txt_Star_Val").GetComponent<Text>();
         Btn_Star_Get = StagePopup.transform.Find("Img_Star_Bg/Btn_Star_Get").GetComponent<Button>();
 
-        #endregion
+#endregion
 
-        #region StageMissionPopup
+#region StageMissionPopup
 
         foreach (var item in StageMissionPopup.GetComponentsInChildren<Transform>(true))
         {
@@ -819,9 +824,9 @@ public class UIManager : MonoBehaviour
         Txt_Mission_Score = Mission_Score.transform.Find("Txt_Mission_Score").GetComponent<Text>();
 
 
-        #endregion
+#endregion
 
-        #region SettingPopup
+#region SettingPopup
 
         Btn_Setting_Back = SettingPopup.transform.Find("Btn_Setting_Back").GetComponent<Button>();
         Btn_Setting_Music = SettingPopup.transform.Find("Setting_Btns/Btn_Setting_Music").GetComponent<Button>();
@@ -837,29 +842,29 @@ public class UIManager : MonoBehaviour
         Btn_Setting_Language = SettingPopup.transform.Find("Setting_Btns/Btn_Setting_Language").GetComponent<Button>();
         Txt_Setting_Ver = SettingPopup.transform.Find("Txt_Setting_Ver").GetComponent<Text>();
 
-        #endregion
+#endregion
 
-        #region ExitPopup
+#region ExitPopup
 
         Btn_Exit_Ok = ExitPopup.transform.Find("Btn_Exit_Ok").GetComponent<Button>();
         Btn_Exit_No = ExitPopup.transform.Find("Btn_Exit_No").GetComponent<Button>();
 
-        #endregion
+#endregion
 
-        #region ReviewPopup
+#region ReviewPopup
 
         Btn_Review_Ok = ReviewPopup.transform.Find("Btn_Review_Ok").GetComponent<Button>();
         Btn_Review_Back = ReviewPopup.transform.Find("Btn_Review_Back").GetComponent<Button>();
 
-        #endregion
+#endregion
 
-        #region ShopPopup
+#region ShopPopup
         Btn_Shop_Back = ShopPopup.transform.Find("Safe_Area/Btn_Shop_Back").GetComponent<Button>();
         Txt_Shop_Dia = ShopPopup.transform.Find("Safe_Area/Img_Shop_DiaBg/Txt_Shop_Dia").GetComponent<Text>();
-        #endregion
+#endregion
 
 
-        #region HelpPopup
+#region HelpPopup
 
         Btn_Help_Back = HelpPopup.transform.Find("Btn_Help_Back").GetComponent<Button>();
         Btn_Help_Item = HelpPopup.transform.Find("Btn_Help_Item").GetComponent<Button>();
@@ -875,9 +880,9 @@ public class UIManager : MonoBehaviour
         Btn_Help_Service = HelpPopup.transform.Find("Btn_Help_Service").GetComponent<Button>();
         Btn_Help_Privacy = HelpPopup.transform.Find("Btn_Help_Privacy").GetComponent<Button>();
 
-        #endregion
+#endregion
 
-        #region GooglePopup
+#region GooglePopup
 
         Btn_Google_Back = GooglePopup.transform.Find("Btn_Google_Back").GetComponent<Button>();
 
@@ -887,9 +892,9 @@ public class UIManager : MonoBehaviour
         Txt_Google_Title_Login = GooglePopup.transform.Find("Txt_Google_Title_Login").gameObject;
         Txt_Ios_Title_Login = GooglePopup.transform.Find("Txt_Ios_Title_Login").gameObject;
         Txt_Google_Title_Logout = GooglePopup.transform.Find("Txt_Google_Title_Logout").gameObject;
-        #endregion
+#endregion
 
-        #region GiftPopup
+#region GiftPopup
 
         Anim_Gift = GiftPopup.transform.Find("BonusReward/Box_main").GetComponent<Animator>();
 
@@ -899,9 +904,9 @@ public class UIManager : MonoBehaviour
         Btn_Gift_Ok = GiftPopup.transform.Find("Btn_Gift_Ok").GetComponent<Button>();
         Btn_Gift_Ads = GiftPopup.transform.Find("Btn_Gift_Ads").GetComponent<Button>();
 
-        #endregion
+#endregion
 
-        #region DailyPopup
+#region DailyPopup
 
         Btn_Daily_Back = DailyPopup.transform.Find("Btn_Daily_Back").GetComponent<Button>();
         Btn_Day = DailyPopup.transform.Find("Day").GetComponentsInChildren<Button>().ToList();
@@ -912,9 +917,9 @@ public class UIManager : MonoBehaviour
             Txt_Daily.Add(item.transform.Find("Txt_daily_1").GetComponent<Text>());
         }
 
-        #endregion
+#endregion
 
-        #region TutoPopup
+#region TutoPopup
 
         List<Transform> obj = TutoPopup.GetComponentsInChildren<Transform>(true).ToList();
 
@@ -947,26 +952,26 @@ public class UIManager : MonoBehaviour
         }
 
 
-        #endregion
+#endregion
 
-        #region ColudPopup
+#region ColudPopup
 
         Txt_Saving = ColudPopup.transform.Find("Txt_Saving").gameObject;
         Txt_Save = ColudPopup.transform.Find("Txt_Save").gameObject;
         Txt_Loading = ColudPopup.transform.Find("Txt_Loading").gameObject;
         Txt_Load = ColudPopup.transform.Find("Txt_Load").gameObject;
 
-        #endregion
+#endregion
 
-        #region LanguagePopup
+#region LanguagePopup
 
         Btn_Language_Back = LanguagePopup.transform.Find("Btn_Language_Back").GetComponent<Button>();
         Btn_Languages = LanguagePopup.transform.Find("Btn_Languages").GetComponentsInChildren<Button>(true);
 
-        #endregion
+#endregion
 
 
-        #region  MultiPopup
+#region  MultiPopup
 
         Btn_Multi_Back = MultiPopup.transform.Find("Btn_Multi_Back").GetComponent<Button>();
         Btn_Multi_Dia_1 = MultiPopup.transform.Find("Btn_Multi_Dia_1").GetComponent<Button>();
@@ -974,9 +979,9 @@ public class UIManager : MonoBehaviour
         Btn_Multi_Dia_10 = MultiPopup.transform.Find("Btn_Multi_Dia_10").GetComponent<Button>();
         Txt_Player_Count = MultiPopup.transform.Find("Txt_Player_Count").GetComponent<Text>();
 
-        #endregion
+#endregion
 
-        #region  MatcingPopup
+#region  MatcingPopup
 
         Btn_Matcing_Back = MatcingPopup.transform.Find("Btn_Matcing_Back").GetComponent<Button>();
         Img_Player = MatcingPopup.transform.Find("Img_Player").GetComponent<Image>();
@@ -985,26 +990,26 @@ public class UIManager : MonoBehaviour
         Txt_Enemy_Name = Img_Enemy.transform.Find("Txt_Enemy_Name").GetComponent<Text>();
         Txt_Count = MatcingPopup.transform.Find("Txt_Count").GetComponent<Text>();
 
-        #endregion
+#endregion
 
-        #region  MsgPopup
+#region  MsgPopup
 
         Txt_Msg_Exit = MsgPopup.transform.Find("Txt_Msg_Exit").GetComponent<Text>();
         Txt_Msg_ReMatch = MsgPopup.transform.Find("Txt_Msg_ReMatch").GetComponent<Text>();
         Txt_Msg_Cencel = MsgPopup.transform.Find("Txt_Msg_Cencel").GetComponent<Text>();
 
-        #endregion
+#endregion
 
-        #region  PrivacyPopup
+#region  PrivacyPopup
 
         Btn_Privacy_Back = PrivacyPopup.transform.Find("Btn_Privacy_Back").GetComponent<Button>();
         Toggle_Privacy = PrivacyPopup.transform.Find("Privacy_Bg/Toggle_Privacy").GetComponent<Toggle>();
         Toggle_service = PrivacyPopup.transform.Find("Service_Bg/Toggle_service").GetComponent<Toggle>();
         Btn_Privacy = PrivacyPopup.transform.Find("Btn_Privacy").GetComponent<Button>();
         Btn_service = PrivacyPopup.transform.Find("Btn_service").GetComponent<Button>();
-        #endregion
+#endregion
 
-        #region PushGiftPopup
+#region PushGiftPopup
 
         Anim_Push_Gift = PushGiftPopup.transform.Find("BonusReward/Box_main").GetComponent<Animator>();
         Img_Push_Gift = Anim_Push_Gift.transform.GetComponentsInChildren<Image>(true);
@@ -1013,10 +1018,10 @@ public class UIManager : MonoBehaviour
         Btn_Push_Gift_Ok = PushGiftPopup.transform.Find("Btn_Gift_Ok").GetComponent<Button>();
         Btn_Push_Gift_Ads = PushGiftPopup.transform.Find("Btn_Gift_Ads").GetComponent<Button>();
 
-        #endregion
+#endregion
 
 
-        #region TutoMsgPopup
+#region TutoMsgPopup
 
         foreach (var item in TutoMsgPopup.GetComponentsInChildren<Transform>(true))
         {
@@ -1047,10 +1052,10 @@ public class UIManager : MonoBehaviour
 
         Btn_TutoMsg_Back = TutoMsgPopup.GetComponentsInChildren<Button>(true).ToList();
 
-        #endregion
+#endregion
 
 
-        #region BestPopup
+#region BestPopup
 
         Btn_Best_Game_01 = BestPopup.transform.Find("Btn_Game_01").GetComponent<Button>();
         Btn_Best_Game_02 = BestPopup.transform.Find("Btn_Game_02").GetComponent<Button>();
@@ -1058,15 +1063,15 @@ public class UIManager : MonoBehaviour
         Btn_Best_Back = BestPopup.transform.Find("Btn_Best_Back").GetComponent<Button>();
         Btn_Best_Start = BestPopup.transform.Find("Btn_Best_Start").GetComponent<Button>();
 
-        #endregion
+#endregion
 
-        #region SelectPopup
+#region SelectPopup
 
         Btn_8x8 = SelectPopup.transform.Find("Btn_8x8").GetComponent<Button>();
         Btn_9x9 = SelectPopup.transform.Find("Btn_9x9").GetComponent<Button>();
         Btn_Select_Back = SelectPopup.transform.Find("Btn_Select_Back").GetComponent<Button>();
 
-        #endregion
+#endregion
 
     }
 
@@ -1075,7 +1080,7 @@ public class UIManager : MonoBehaviour
     /// </summary>
     public void AddListener()
     {
-        #region Main
+#region Main
 
         Btn_Classic.onClick.AddListener(() => {
             gameMode = GameMode.Classic;
@@ -1127,28 +1132,27 @@ public class UIManager : MonoBehaviour
         Btn_Ios.onClick.AddListener(() => PushPopup(GooglePopup));
         Btn_Ios.onClick.AddListener(() => FireBaseManager.Instance.LogEvent("Main_Google_Login_Btn"));
         Btn_Ios.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_circle));
-
-
-
-        
+   
         Btn_Gift.onClick.AddListener(() => Get_Gift_Item());
-
 
         Btn_AddDia.onClick.AddListener(() => Scroll_Control(ShopManager.Instance.Content, Vector3.zero));
         Btn_AddDia.onClick.AddListener(() => PushPopup(ShopPopup));
         Btn_AddDia.onClick.AddListener(() => FireBaseManager.Instance.LogEvent("Main_Crystal"));
         Btn_AddDia.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_square));
-
+#if UNITY_ANDROID
         Btn_Review.onClick.AddListener(() => Application.OpenURL("https://play.google.com/store/apps/details?id=com.block.puzzle.puzzlegame.multiplayer.tetris"));
+#elif UNITY_IOS
+        Btn_Review.onClick.AddListener(() => Device.RequestStoreReview());
+#endif
         Btn_Review.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_circle));
         Btn_Review.onClick.AddListener(() => FireBaseManager.Instance.LogEvent("Main_Review"));
-
+        
         Btn_Achievements.onClick.AddListener(() => CloudOnceManager.Instance.Show_Achievements());
         //Btn_PushGift.onClick.AddListener(() => Push_Gift());
 
-        #endregion
+#endregion
 
-        #region Game
+#region Game
 
         Btn_Puase.onClick.AddListener(() => PushPopup(PausePopup));
         Btn_Puase.onClick.AddListener(() => GamePlay.instance.Pause());
@@ -1169,9 +1173,9 @@ public class UIManager : MonoBehaviour
         Btn_Item_Multi.onClick.AddListener(() => GamePlay.instance.Use_Item(Item.multi_double));
         Btn_Item_Multi.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_square));
 
-        #endregion
+#endregion
 
-        #region PausePopup
+#region PausePopup
 
         Btn_Pause_Main.onClick.AddListener(() => PopPopup());
         Btn_Pause_Main.onClick.AddListener(() => Go_Main());
@@ -1203,9 +1207,9 @@ public class UIManager : MonoBehaviour
         Btn_Pause_Effect.onClick.AddListener(() => AudioManager.instance.ToggleEffectStatus());
         Btn_Pause_Effect.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_circle));
 
-        #endregion
+#endregion
 
-        #region Classic_Over_Popup
+#region Classic_Over_Popup
 
         Btn_Over_Classic_Rank.onClick.AddListener(() => CloudOnceManager.Instance.Show_Leaderboards());
         Btn_Over_Classic_Rank.onClick.AddListener(() => FireBaseManager.Instance.LogEvent("Classic_Result_Rank"));
@@ -1297,10 +1301,10 @@ public class UIManager : MonoBehaviour
         Btn_Over_Timer_1_Review.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_octagon));
         Btn_Over_Timer_1_Review.onClick.AddListener(() => Application.OpenURL("https://play.google.com/store/apps/details?id=com.block.puzzle.puzzlegame.multiplayer.tetris"));
 
-        #endregion
+#endregion
 
 
-        #region StagePopup
+#region StagePopup
 
         Btn_Stage_Back.onClick.AddListener(() => PopPopup());
         Btn_Stage_Back.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_close));
@@ -1309,9 +1313,9 @@ public class UIManager : MonoBehaviour
         Btn_Star_Get.onClick.AddListener(() => FireBaseManager.Instance.LogEvent("Stage_Popup_Star_Get"));
         Btn_Review.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_square));
 
-        #endregion
+#endregion
 
-        #region StageMissionPopup
+#region StageMissionPopup
 
         foreach (var item in Btn_Mission_Back)
         {
@@ -1329,9 +1333,9 @@ public class UIManager : MonoBehaviour
 
         }
 
-        #endregion
+#endregion
 
-        #region SettingPopup
+#region SettingPopup
 
         Btn_Setting_Back.onClick.AddListener(() => PopPopup());
         Btn_Setting_Back.onClick.AddListener(() => FireBaseManager.Instance.LogEvent("Setting_Back"));
@@ -1381,9 +1385,9 @@ public class UIManager : MonoBehaviour
         Btn_Setting_Language.onClick.AddListener(() => FireBaseManager.Instance.LogEvent("Setting_Language"));
         Btn_Setting_Language.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_circle));
 
-        #endregion
+#endregion
 
-        #region ExitPopup
+#region ExitPopup
 
         Btn_Exit_Ok.onClick.AddListener(() => App_Quit());
         Btn_Exit_Ok.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_square));
@@ -1393,9 +1397,9 @@ public class UIManager : MonoBehaviour
 
         Btn_Exit_No.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_square));
 
-        #endregion
+#endregion
 
-        #region ReviewPopup
+#region ReviewPopup
 
         Btn_Review_Ok.onClick.AddListener(() => Application.OpenURL("https://play.google.com/store/apps/details?id=com.block.puzzle.puzzlegame.multiplayer.tetris"));
         Btn_Review_Ok.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_square));
@@ -1409,18 +1413,18 @@ public class UIManager : MonoBehaviour
         Btn_Review_Back.onClick.AddListener(() => PopPopup());
         Btn_Review_Back.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_close));
 
-        #endregion
+#endregion
 
-        #region ShopPopup
+#region ShopPopup
 
         Btn_Shop_Back.onClick.AddListener(() => PopPopup());
         Btn_Shop_Back.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_close));
         Btn_Shop_Back.onClick.AddListener(() => Shop_Banner());
 
 
-        #endregion
+#endregion
 
-        #region HelpPopup
+#region HelpPopup
 
         Btn_Help_Back.onClick.AddListener(() => PopPopup());
         Btn_Help_Back.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_close));
@@ -1465,9 +1469,9 @@ public class UIManager : MonoBehaviour
 
         }
 
-        #endregion
+#endregion
 
-        #region GooglePopup
+#region GooglePopup
 
         Btn_Google_Back.onClick.AddListener(() => PopPopup());
         Btn_Google_Back.onClick.AddListener(() => FireBaseManager.Instance.LogEvent("Main_Google_Close"));
@@ -1482,9 +1486,9 @@ public class UIManager : MonoBehaviour
         Btn_Google_Logout.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_square));
 
 
-        #endregion
+#endregion
 
-        #region GiftPopup
+#region GiftPopup
 
         Btn_Gift_Ok.onClick.AddListener(() => Get_Gift(false));
         Btn_Gift_Ok.onClick.AddListener(() => FireBaseManager.Instance.LogEvent("Main_Gift_Get"));
@@ -1502,9 +1506,9 @@ public class UIManager : MonoBehaviour
         Btn_Gift_Ads.onClick.AddListener(() => FireBaseManager.Instance.LogEvent("Main_Gift_Ads"));
         Btn_Gift_Ads.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_square));
 
-        #endregion
+#endregion
 
-        #region DailyPopup
+#region DailyPopup
 
         Btn_Daily_Back.onClick.AddListener(() => PopPopup());
         Btn_Daily_Back.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_close));
@@ -1515,9 +1519,9 @@ public class UIManager : MonoBehaviour
 
         }
 
-        #endregion
+#endregion
 
-        #region LanguagePopup
+#region LanguagePopup
 
         Btn_Language_Back.onClick.AddListener(() => PopPopup());
         Btn_Language_Back.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_close));
@@ -1531,11 +1535,11 @@ public class UIManager : MonoBehaviour
 
         }
 
-        #endregion
+#endregion
 
 
 
-        #region  MultiPopup
+#region  MultiPopup
 
         Btn_Multi_Back.onClick.AddListener(() => PopPopup());
         Btn_Multi_Back.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_close));
@@ -1549,17 +1553,17 @@ public class UIManager : MonoBehaviour
         Btn_Multi_Dia_10.onClick.AddListener(() => PhotonManager.Instance.Multi_Start(Multi_Room.Dia_10));
         Btn_Multi_Dia_10.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_square));
 
-        #endregion
+#endregion
 
-        #region  MatcingPopup
+#region  MatcingPopup
 
         Btn_Matcing_Back.onClick.AddListener(() => PopPopup());
         Btn_Matcing_Back.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_close));
 
 
-        #endregion
+#endregion
 
-        #region  PrivacyPopup
+#region  PrivacyPopup
 
         Btn_Privacy_Back.onClick.AddListener(() => App_Quit());
         Toggle_Privacy.onValueChanged.AddListener(delegate
@@ -1578,9 +1582,9 @@ public class UIManager : MonoBehaviour
         Btn_service.onClick.AddListener(() => Application.OpenURL("https://sites.google.com/site/breaktieme/terms-of-service"));
         Btn_service.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_soft));
 
-        #endregion
+#endregion
 
-        #region PushGiftPopup
+#region PushGiftPopup
 
         Anim_Push_Gift = PushGiftPopup.transform.Find("BonusReward/Box_main").GetComponent<Animator>();
 
@@ -1600,9 +1604,9 @@ public class UIManager : MonoBehaviour
         Btn_Push_Gift_Ads.onClick.AddListener(() => FireBaseManager.Instance.LogEvent("Push_Gift_Ads"));
         Btn_Push_Gift_Ads.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_square));
 
-        #endregion
+#endregion
 
-        #region TutoMsgPopup
+#region TutoMsgPopup
         Debug.Log("Btn_TutoMsg_Back " + Btn_TutoMsg_Back.Count);
         foreach (var item in Btn_TutoMsg_Back)
         {
@@ -1614,9 +1618,9 @@ public class UIManager : MonoBehaviour
             }
         }
 
-        #endregion
+#endregion
 
-        #region BestPopup
+#region BestPopup
 
         Btn_Best_Game_01.onClick.AddListener(() => Application.OpenURL("https://play.google.com/store/apps/details?id=com.block.puzzle.puzzlego.number.puzzledom.Kingdom"));
         Btn_Best_Game_02.onClick.AddListener(() => Application.OpenURL("https://play.google.com/store/apps/details?id=com.jumpball.colorballjump.bouncingball"));
@@ -1634,16 +1638,16 @@ public class UIManager : MonoBehaviour
             Check_Daily();
         });
 
-        #endregion
+#endregion
 
 
-        #region SelectPopup
+#region SelectPopup
 
         Btn_8x8.onClick.AddListener(() => Select_Board(8));
         Btn_9x9.onClick.AddListener(() => Select_Board(9));
         Btn_Select_Back.onClick.AddListener(() => PopPopup());
 
-        #endregion
+#endregion
 
     }
 
@@ -1939,7 +1943,7 @@ public class UIManager : MonoBehaviour
     }
 
 
-    #region Stage_Popup
+#region Stage_Popup
 
     /// <summary>
     /// 스테이지 팝업 위치 세팅
@@ -2035,9 +2039,9 @@ public class UIManager : MonoBehaviour
 
     }
 
-    #endregion
+#endregion
 
-    #region Game
+#region Game
 
     GameMode gameMode = GameMode.Classic;
 
@@ -2905,10 +2909,10 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    #endregion
+#endregion
 
 
-    #region stage_mission_popup
+#region stage_mission_popup
 
     /// <summary>
     /// 스테이지 미션 초기 세팅
@@ -3073,7 +3077,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    #endregion
+#endregion
 
 
     public void Set_Google_Txt()

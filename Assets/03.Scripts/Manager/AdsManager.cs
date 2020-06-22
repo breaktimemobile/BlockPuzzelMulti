@@ -165,7 +165,7 @@ public class AdsManager : MonoBehaviour
 #elif UNITY_ANDROID
         string adUnitId = "ca-app-pub-4682698622407711/1032353173";
 #elif UNITY_IOS
-        string adUnitId = "	ca-app-pub-3940256099942544/1712485313";
+        string adUnitId = "ca-app-pub-3940256099942544/1712485313";
 #else
         string adUnitId = "unexpected_platform";
 #endif
@@ -226,7 +226,7 @@ public class AdsManager : MonoBehaviour
         // Clean up interstitial ad before creating a new one.
         if (this.interstitial != null)
         {
-            this.interstitial.Destroy();
+            this.interstitial.Destroy(); 
         }
 
         // Create an interstitial.
