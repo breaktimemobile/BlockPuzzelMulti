@@ -30,7 +30,7 @@ public class FireBaseManager : MonoBehaviour
     {
 
         // Log an event with no parameters.
-        FirebaseAnalytics.LogEvent(MainTitle, SubTitle, val);
+        //FirebaseAnalytics.LogEvent(MainTitle, SubTitle, val);
 
 
     }
