@@ -8,7 +8,7 @@ using Random = UnityEngine.Random;
 using Photon.Pun;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
 
-#if UNITU_IOS
+#if UNITY_IOS
 using UnityEngine.iOS;
 #endif
 
