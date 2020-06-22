@@ -43,7 +43,7 @@ public class SocialManager : MonoBehaviour
         PlayGamesPlatform.DebugLogEnabled = true;
         PlayGamesPlatform.Activate();
 
-//#else
+#else
 
         GameCenterPlatform.ShowDefaultAchievementCompletionBanner(true);
  
