@@ -1,0 +1,36 @@
+diff a/Assets/03.Scripts/Manager/UIManager.cs b/Assets/03.Scripts/Manager/UIManager.cs	(rejected hunks)
+@@ -61,6 +61,8 @@
+     private Text Txt_Gift_Get;
+     private Button Btn_AddDia;
+     private Button Btn_Review;
++    private Button Btn_Achievements;
++
+     private Text Txt_Dia;
+     public Button Btn_PushGift;
+ 
+@@ -592,7 +594,7 @@
+         Txt_Dia = Main.transform.Find("Img_DiaBg/Txt_Dia").GetComponent<Text>();
+         Btn_Review = Main.transform.Find("Btn_Review").GetComponent<Button>();
+         Btn_PushGift = Main.transform.Find("Btn_PushGift").GetComponent<Button>();
+-
++        Btn_Achievements = Main.transform.Find("Btn_Achievements").GetComponent<Button>();
+ 
+         #endregion
+ 
+@@ -1130,6 +1132,7 @@
+         Btn_Review.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_circle));
+         Btn_Review.onClick.AddListener(() => FireBaseManager.Instance.LogEvent("Main_Review"));
+ 
++        Btn_Achievements.onClick.AddListener(() => CloudOnceManager.Instance.Show_Achievements());
+ 
+         //Btn_PushGift.onClick.AddListener(() => Push_Gift());
+ 
+@@ -2573,6 +2576,8 @@
+         Over_Timer_0.SetActive(false);
+         Over_Timer_1.SetActive(false);
+ 
++        CloudOnceManager.Instance.Report_Achievements();
++
+         switch (gameMode)
+         {
+             case GameMode.Classic:

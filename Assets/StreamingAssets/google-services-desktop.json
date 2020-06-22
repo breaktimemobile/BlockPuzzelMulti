@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "612546090489",
+    "firebase_url": "https://block-puzzle-multi-40927604.firebaseio.com",
+    "project_id": "block-puzzle-multi-40927604",
+    "storage_bucket": "block-puzzle-multi-40927604.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:612546090489:android:de4f5439cc2830cc719928",
+        "android_client_info": {
+          "package_name": "com.block.puzzle.puzzlegame.multiplayer.tetris"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "612546090489-9m4i6bukmor899hkkcai7e30n20sacqh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.block.puzzle.puzzlegame.multiplayer.tetris",
+            "certificate_hash": "c97105815b033fa00c30e0d75bfacc257feabc6b"
+          }
+        },
+        {
+          "client_id": "612546090489-eu2vhfnn0m6ienm1ld7fermutpvsr7lp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1uXEBZHbq7NHxIobHIzUikH4j6Bwro14"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "612546090489-eu2vhfnn0m6ienm1ld7fermutpvsr7lp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

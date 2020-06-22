@@ -1,0 +1,7 @@
+/Library
+/Temp
+/*.sln
+/Logs
+/obj
+/Assets/Firebase
+/.vs

@@ -1,0 +1,135 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Main
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 8
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 23f6eb4b130dee94196ce9e30c0c9af9, type: 3}
+    - {fileID: 2800000, guid: 29403cf77c2fb3c448424ba326323af7, type: 3}
+    - {fileID: 2800000, guid: 28afb6fb44139cf4bab2673b0c6c8809, type: 3}
+    - {fileID: 2800000, guid: 051be4d8e590ff9429bb80d7c2e9ffa9, type: 3}
+    - {fileID: 2800000, guid: cc85ee69354ff3449851b251a5dff7b1, type: 3}
+    - {fileID: 2800000, guid: 3cbd446586c0ef149838a61482a4932c, type: 3}
+    - {fileID: 2800000, guid: 96ecbdc026e2cfc46804ff79577a37d2, type: 3}
+    - {fileID: 2800000, guid: 622fc9e26d3b39a4ea4cc5bb1d9e67d2, type: 3}
+    - {fileID: 2800000, guid: c30a5de24d84cdf42a436972c4070168, type: 3}
+    - {fileID: 2800000, guid: 8e81fb0f3ba2fa14aab04cf61a542929, type: 3}
+    - {fileID: 2800000, guid: 1a0e9ebc72f0a9a4e9d8bfe099a5ea28, type: 3}
+    - {fileID: 2800000, guid: b146dede3bcfa3745a8742cd677c2f91, type: 3}
+    - {fileID: 2800000, guid: 2b880b4ce56e9b140b3721449ca1bacf, type: 3}
+    - {fileID: 2800000, guid: bf0c42160c6aa7e43800dc8b7b476d32, type: 3}
+    - {fileID: 2800000, guid: ae7014d3fe15b1f43bde5dda52a1d233, type: 3}
+    - {fileID: 2800000, guid: b379227d2c1079b488647c760afb6d4b, type: 3}
+    - {fileID: 2800000, guid: a98308d37d48b9e48926592a19d71f6d, type: 3}
+    - {fileID: 2800000, guid: 5d7c5599ca8b451488a223441ea73781, type: 3}
+    - {fileID: 2800000, guid: 42942ffba8e1bf44487d423c0b0e14c6, type: 3}
+    - {fileID: 2800000, guid: 3e44563d64094d744bf3aafe1a505538, type: 3}
+    - {fileID: 2800000, guid: 392d5d37acb5d8445b9723afa676d975, type: 3}
+    - {fileID: 2800000, guid: 3817f1d3e0c229140b186f93bb76af12, type: 3}
+    - {fileID: 2800000, guid: 6de0bc6fc963dd640b293a9a255411ff, type: 3}
+    - {fileID: 2800000, guid: e82c77adfc719414a90d71052d23f2a4, type: 3}
+    - {fileID: 2800000, guid: 0d2cb5662c7d14c4097c3651070f4026, type: 3}
+    - {fileID: 2800000, guid: 708c38ecdebd69d42adc29d325874933, type: 3}
+    - {fileID: 2800000, guid: 16dba929e8e3e4e4ebe5790314160b1e, type: 3}
+    - {fileID: 2800000, guid: 61ad3b220ab3e8f40aeaf3f9721b7a90, type: 3}
+    - {fileID: 2800000, guid: 6321d2c71c2e8bb4482742a9bb1e105b, type: 3}
+    - {fileID: 2800000, guid: f7547ff6eee7a8d47ad55d81ca287f90, type: 3}
+    - {fileID: 2800000, guid: 44bf54b095c2f9e46bda2710d5254026, type: 3}
+    - {fileID: 2800000, guid: a866c80d451bb6e40aeb4288e1cdc85e, type: 3}
+    totalSpriteSurfaceArea: 3853218
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 44bf54b095c2f9e46bda2710d5254026, type: 3}
+  - {fileID: 21300000, guid: 96ecbdc026e2cfc46804ff79577a37d2, type: 3}
+  - {fileID: 21300000, guid: 61ad3b220ab3e8f40aeaf3f9721b7a90, type: 3}
+  - {fileID: 21300000, guid: 622fc9e26d3b39a4ea4cc5bb1d9e67d2, type: 3}
+  - {fileID: 21300000, guid: c30a5de24d84cdf42a436972c4070168, type: 3}
+  - {fileID: 21300000, guid: 3817f1d3e0c229140b186f93bb76af12, type: 3}
+  - {fileID: 21300000, guid: ae7014d3fe15b1f43bde5dda52a1d233, type: 3}
+  - {fileID: 21300000, guid: a98308d37d48b9e48926592a19d71f6d, type: 3}
+  - {fileID: 21300000, guid: 3cbd446586c0ef149838a61482a4932c, type: 3}
+  - {fileID: 21300000, guid: bf0c42160c6aa7e43800dc8b7b476d32, type: 3}
+  - {fileID: 21300000, guid: 0d2cb5662c7d14c4097c3651070f4026, type: 3}
+  - {fileID: 21300000, guid: f7547ff6eee7a8d47ad55d81ca287f90, type: 3}
+  - {fileID: 21300000, guid: 392d5d37acb5d8445b9723afa676d975, type: 3}
+  - {fileID: 21300000, guid: 6321d2c71c2e8bb4482742a9bb1e105b, type: 3}
+  - {fileID: 21300000, guid: 29403cf77c2fb3c448424ba326323af7, type: 3}
+  - {fileID: 21300000, guid: 051be4d8e590ff9429bb80d7c2e9ffa9, type: 3}
+  - {fileID: 21300000, guid: 16dba929e8e3e4e4ebe5790314160b1e, type: 3}
+  - {fileID: 21300000, guid: cc85ee69354ff3449851b251a5dff7b1, type: 3}
+  - {fileID: 21300000, guid: 5d7c5599ca8b451488a223441ea73781, type: 3}
+  - {fileID: 21300000, guid: 23f6eb4b130dee94196ce9e30c0c9af9, type: 3}
+  - {fileID: 21300000, guid: 28afb6fb44139cf4bab2673b0c6c8809, type: 3}
+  - {fileID: 21300000, guid: 42942ffba8e1bf44487d423c0b0e14c6, type: 3}
+  - {fileID: 21300000, guid: 2b880b4ce56e9b140b3721449ca1bacf, type: 3}
+  - {fileID: 21300000, guid: 1a0e9ebc72f0a9a4e9d8bfe099a5ea28, type: 3}
+  - {fileID: 21300000, guid: 708c38ecdebd69d42adc29d325874933, type: 3}
+  - {fileID: 21300000, guid: a866c80d451bb6e40aeb4288e1cdc85e, type: 3}
+  - {fileID: 21300000, guid: 3e44563d64094d744bf3aafe1a505538, type: 3}
+  - {fileID: 21300000, guid: b379227d2c1079b488647c760afb6d4b, type: 3}
+  - {fileID: 21300000, guid: e82c77adfc719414a90d71052d23f2a4, type: 3}
+  - {fileID: 21300000, guid: b146dede3bcfa3745a8742cd677c2f91, type: 3}
+  - {fileID: 21300000, guid: 8e81fb0f3ba2fa14aab04cf61a542929, type: 3}
+  - {fileID: 21300000, guid: 6de0bc6fc963dd640b293a9a255411ff, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - ui_leval_base
+  - icon_dailygift03
+  - ui_img_ribbon
+  - icon_dailygift04
+  - icon_dailygift05
+  - omg_obg_bottom
+  - img_missionfail
+  - item_img_01
+  - icon_dailygift02
+  - img_missionclear
+  - sparkle
+  - ui_shop_ribbon
+  - logo_title
+  - ui_img_ribbon02
+  - btn_circle__blue_p
+  - btn_green_p
+  - ui_icon_timegift_p2
+  - icon_dailygift01
+  - item_img_02
+  - btn_circle__blue_n
+  - btn_green_n
+  - item_img_03
+  - img_giftbox_top2
+  - icon_dailygift07
+  - ui_icon_timegift_n2
+  - ui_mission_Popup_base
+  - item_img_04
+  - img_tie
+  - omg_obg_top
+  - img_giftbox_base2
+  - icon_dailygift06
+  - omg_obg_side
+  m_Tag: Main
+  m_IsVariant: 0

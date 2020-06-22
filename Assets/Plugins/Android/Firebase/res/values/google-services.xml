@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/firebase_database_url,@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id,@string/default_web_client_id">
+  <string name="firebase_database_url" translatable="false">https://block-puzzle-multi-40927604.firebaseio.com</string>
+  <string name="gcm_defaultSenderId" translatable="false">612546090489</string>
+  <string name="google_storage_bucket" translatable="false">block-puzzle-multi-40927604.appspot.com</string>
+  <string name="project_id" translatable="false">block-puzzle-multi-40927604</string>
+  <string name="google_api_key" translatable="false">AIzaSyC1uXEBZHbq7NHxIobHIzUikH4j6Bwro14</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyC1uXEBZHbq7NHxIobHIzUikH4j6Bwro14</string>
+  <string name="google_app_id" translatable="false">1:612546090489:android:de4f5439cc2830cc719928</string>
+  <string name="default_web_client_id" translatable="false">612546090489-eu2vhfnn0m6ienm1ld7fermutpvsr7lp.apps.googleusercontent.com</string>
+</resources>
