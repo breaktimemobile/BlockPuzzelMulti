@@ -40,7 +40,7 @@ public class AdsManager : MonoBehaviour
         //MobileAds.SetiOSAppPauseOnBackground(true);
 
         // Initialize the Google Mobile Ads SDK.
-        MobileAds.Initialize(appId);
+        MobileAds.Initialize(initStatus => { });
 
 
         this.RequestRewardedAd();
