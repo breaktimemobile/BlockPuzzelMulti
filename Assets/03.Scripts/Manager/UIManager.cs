@@ -1129,10 +1129,9 @@ public class UIManager : MonoBehaviour
         Btn_Google.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_circle));
 
         Btn_Ios.onClick.AddListener(() => Set_Google_Txt());
-        Btn_Ios.onClick.AddListener(() => PushPopup(GooglePopup));
+        Btn_Ios.onClick.AddListener(() => Login_Ios());
         Btn_Ios.onClick.AddListener(() => FireBaseManager.Instance.LogEvent("Main_Google_Login_Btn"));
         Btn_Ios.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_circle));
-   
         Btn_Gift.onClick.AddListener(() => Get_Gift_Item());
 
         Btn_AddDia.onClick.AddListener(() => Scroll_Control(ShopManager.Instance.Content, Vector3.zero));
@@ -4121,8 +4120,17 @@ public class UIManager : MonoBehaviour
 
     }
 
-    public void Open_Best()
-    {
+    private void Login_Ios() {
+
+        if (Social.localUser.authenticated)
+        {
+            CloudOnceManager.Instance.Show_Achievements();
+        }
+        else
+        {
+            PushPopup(GooglePopup);
+
+        }
 
     }
 }
