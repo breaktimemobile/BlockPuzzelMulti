@@ -14,6 +14,12 @@ public class CloudOnceManager : MonoBehaviour
         Cloud.Initialize(true, false);
     }
 
+    private void Start()
+    {
+        FireBaseManager.Instance.FirebaseNullLogin();
+
+    }
+
     public void Login()
     {
         Cloud.SignIn(true, authenticateCallBck);
@@ -36,7 +42,7 @@ public class CloudOnceManager : MonoBehaviour
 
             UIManager.Instance.PopPopup();
             UIManager.Instance.Set_Google_Txt();
-            FireBaseManager.Instance.FireBaseGoogleLogin();
+            //FireBaseManager.Instance.FireBaseGoogleLogin();
 
         }
         else
@@ -45,7 +51,6 @@ public class CloudOnceManager : MonoBehaviour
             Debug.Log("로그인 실패 " + PlayerPrefs.GetInt("Login", 0));
 
             UIManager.Instance.Set_Google_Txt();
-            FireBaseManager.Instance.FirebaseNullLogin();
 
         }
     }

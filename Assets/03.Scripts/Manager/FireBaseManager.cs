@@ -50,6 +50,7 @@ public class FireBaseManager : MonoBehaviour
                     Firebase.Auth.FirebaseUser newUser = task.Result;
 
                     isFireLogin = true;
+                    Debug.Log("유저 아이디  "+newUser.UserId);
 
 
                 }
