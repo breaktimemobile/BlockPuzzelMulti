@@ -45,6 +45,7 @@ public class FireBaseManager : MonoBehaviour
             {
                 if (task.IsCompleted && !task.IsCanceled && !task.IsFaulted)
                 {
+
                     // User is now signed in.
 
                     Firebase.Auth.FirebaseUser newUser = task.Result;

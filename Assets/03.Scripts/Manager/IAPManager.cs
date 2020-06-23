@@ -31,7 +31,10 @@ public class IAPManager : MonoBehaviour, IStoreListener
 
     void Start()
     {
-        InitializePurchasing();
+        InitStore();
+
+        var builder = ConfigurationBuilder.Instance(StandardPurchasingModule.Instance());
+        string receipt = builder.Configure<IAppleConfiguration>().appReceipt;
     }
 
     private bool IsInitialized()
@@ -65,19 +68,31 @@ public class IAPManager : MonoBehaviour, IStoreListener
 
     private void InitStore()
     {
+        Debug.Log("결제 인증 시작");
+
+        if (IsInitialized())
+            return;
+
+
+
         ConfigurationBuilder builder = ConfigurationBuilder.Instance(StandardPurchasingModule.Instance());
 
 #if UNITY_ANDROID
+        Debug.Log("안드로이드 결제 인증 시작");
         foreach (var item in android_ProductIds)
         {
             builder.AddProduct(item, ProductType.Consumable);
         }
 #elif UNITY_IOS
-          foreach (var item in ios_ProductIds)
+
+        Debug.Log("아이폰 결제 인증 시작");
+        foreach (var item in ios_ProductIds)
         {
             builder.AddProduct(item, ProductType.Consumable);
         }
 #endif
+
+
         UnityPurchasing.Initialize(this, builder);
 
 
@@ -85,8 +100,13 @@ public class IAPManager : MonoBehaviour, IStoreListener
 
     void IStoreListener.OnInitialized(IStoreController controller, IExtensionProvider extensions)
     {
+
+        Debug.Log("아이폰 결제 완료");
+
         this.controller = controller;
         this.extensions = extensions;
+
+        Debug.Log("결제 초기화 개수 " + controller.products.all.Length);
 
         foreach (var item in controller.products.all)
         {
