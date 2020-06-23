@@ -21,8 +21,13 @@ public class FireBaseManager : MonoBehaviour
     {
 
         // Log an event with no parameters.
-        FirebaseAnalytics.LogEvent(MainTitle);
 
+#if UNITY_ANDROID
+        FirebaseAnalytics.LogEvent("Android_"+ MainTitle);
+#elif UNITY_IOS
+        FirebaseAnalytics.LogEvent("IOS_"+MainTitle);
+
+#endif
 
     }
 

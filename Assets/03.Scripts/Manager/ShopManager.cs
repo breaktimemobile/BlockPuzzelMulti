@@ -70,7 +70,6 @@ public class ShopManager : MonoBehaviour
         StartCoroutine(Co_Touch());
 
         Dictionary<string, object> Shop_data = DataManager.Instance.shop_data.Find(x => ((int)x["num"]).Equals(index +1));
-
         int val = 0;
         switch ((int)Shop_data["shop_type"])
         {
