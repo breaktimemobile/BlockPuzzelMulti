@@ -514,7 +514,7 @@ public class UIManager : MonoBehaviour
 
         DataManager.Instance.Get_Json_Data();
 
-        LanguageManager.Instance.Get_Language();
+        Language.Change_language((SystemLanguage)DataManager.Instance.state_Player.language);
 
         ShopManager.Instance.Shop_Setting(UIManager.Instance.ShopPopup);
 
@@ -539,7 +539,6 @@ public class UIManager : MonoBehaviour
 
 
             Check_Daily();
-            //PushPopup(BestPopup);
 
 #if UNITY_EDITOR
             //FireBaseManager.Instance.Get_Editor_Gift();
@@ -1084,7 +1083,9 @@ public class UIManager : MonoBehaviour
 
         Btn_Classic.onClick.AddListener(() => {
             gameMode = GameMode.Classic;
-            PushPopup(SelectPopup);
+            Play_Game(gameMode);
+
+            //PushPopup(SelectPopup);
         });
         Btn_Classic.onClick.AddListener(() => FireBaseManager.Instance.LogEvent("Main_Classic"));
         //Btn_Classic.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_rectangle));
@@ -1101,7 +1102,9 @@ public class UIManager : MonoBehaviour
 
         Btn_Timer.onClick.AddListener(() => {
             gameMode = GameMode.Timer;
-            PushPopup(SelectPopup);
+            Play_Game(gameMode);
+
+            //PushPopup(SelectPopup);
         });
         Btn_Timer.onClick.AddListener(() => FireBaseManager.Instance.LogEvent("Main_Timer"));
         Btn_Timer.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_rectangle));
@@ -1529,7 +1532,7 @@ public class UIManager : MonoBehaviour
         {
             SystemLanguage lng = (SystemLanguage)langeuae[i];
             Btn_Languages[i].onClick.AddListener(() => PopPopup());
-            Btn_Languages[i].onClick.AddListener(() => LanguageManager.Instance.Change_language(lng));
+            Btn_Languages[i].onClick.AddListener(() => Language.GetInstance().Set(lng));
             Btn_Languages[i].onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_soft));
 
         }
@@ -4040,7 +4043,7 @@ public class UIManager : MonoBehaviour
 
             DataManager.Instance.Get_Json_Data();
 
-            LanguageManager.Instance.Get_Language();
+            Language.Change_language((SystemLanguage)DataManager.Instance.state_Player.language);
 
             SetUi();
 

@@ -11,7 +11,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{4E3CC337-9EE0-8D96-8AB3-E41C1FF8E4B2}</ProjectGuid>
+    <ProjectGuid>{F3E8B98C-8DDF-3BBE-B645-8D700D60BDF4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -84,8 +84,54 @@
     <Compile Include="Assets\OPS\Obfuscator.Free\Editor\BuildPostProcessor.cs" />
     <Compile Include="Assets\OPS\Obfuscator.Free\Editor\Gui\SettingsWindow.cs" />
     <Compile Include="Assets\OPS\Obfuscator.Free\Editor\Gui\StackTraceWindow.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Analytics\Facebook\3rdParty\FacebookSDK\Plugins\Editor\Facebook.Unity.Editor\FacebookBuild.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Analytics\Facebook\3rdParty\FacebookSDK\Plugins\Editor\Facebook.Unity.Editor\FacebookConsoleEndpoint.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Analytics\Facebook\3rdParty\FacebookSDK\Plugins\Editor\Facebook.Unity.Editor\FacebookPostprocess.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Analytics\Facebook\3rdParty\FacebookSDK\Plugins\Editor\Facebook.Unity.Editor\FacebookSettingsEditor.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Analytics\Facebook\3rdParty\FacebookSDK\Plugins\Editor\Facebook.Unity.Editor\Utility.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Analytics\Facebook\3rdParty\FacebookSDK\Plugins\Editor\Facebook.Unity.Editor\android\FacebookAndroidUtil.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Analytics\Facebook\3rdParty\FacebookSDK\Plugins\Editor\Facebook.Unity.Editor\android\ManifestMod.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Analytics\Facebook\3rdParty\FacebookSDK\Plugins\Editor\Facebook.Unity.Editor\iOS\FixupFiles.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Analytics\Facebook\3rdParty\FacebookSDK\Plugins\Editor\Facebook.Unity.Editor\iOS\PBX\Elements.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Analytics\Facebook\3rdParty\FacebookSDK\Plugins\Editor\Facebook.Unity.Editor\iOS\PBX\Lexer.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Analytics\Facebook\3rdParty\FacebookSDK\Plugins\Editor\Facebook.Unity.Editor\iOS\PBX\Objects.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Analytics\Facebook\3rdParty\FacebookSDK\Plugins\Editor\Facebook.Unity.Editor\iOS\PBX\Parser.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Analytics\Facebook\3rdParty\FacebookSDK\Plugins\Editor\Facebook.Unity.Editor\iOS\PBX\Sections.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Analytics\Facebook\3rdParty\FacebookSDK\Plugins\Editor\Facebook.Unity.Editor\iOS\PBX\Serializer.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Analytics\Facebook\3rdParty\FacebookSDK\Plugins\Editor\Facebook.Unity.Editor\iOS\PBX\Utils.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Analytics\Facebook\3rdParty\FacebookSDK\Plugins\Editor\Facebook.Unity.Editor\iOS\PBXCapabilityType.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Analytics\Facebook\3rdParty\FacebookSDK\Plugins\Editor\Facebook.Unity.Editor\iOS\PBXPath.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Analytics\Facebook\3rdParty\FacebookSDK\Plugins\Editor\Facebook.Unity.Editor\iOS\PBXProject.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Analytics\Facebook\3rdParty\FacebookSDK\Plugins\Editor\Facebook.Unity.Editor\iOS\PBXProjectData.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Analytics\Facebook\3rdParty\FacebookSDK\Plugins\Editor\Facebook.Unity.Editor\iOS\PListDict.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Analytics\Facebook\3rdParty\FacebookSDK\Plugins\Editor\Facebook.Unity.Editor\iOS\PListParser.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Analytics\Facebook\Internal\Editor\FacebookPreBuild.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Analytics\GameAnalytics\3rdParty\GameAnalytics\Editor\GA_AssetPostprocessor.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Analytics\GameAnalytics\3rdParty\GameAnalytics\Editor\GA_AutoRun.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Analytics\GameAnalytics\3rdParty\GameAnalytics\Editor\GA_ContinuationManager.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Analytics\GameAnalytics\3rdParty\GameAnalytics\Editor\GA_EditorUtilities.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Analytics\GameAnalytics\3rdParty\GameAnalytics\Editor\GA_Menu.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Analytics\GameAnalytics\3rdParty\GameAnalytics\Editor\GA_PostprocessBuild.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Analytics\GameAnalytics\3rdParty\GameAnalytics\Editor\GA_SettingsInspector.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Analytics\GameAnalytics\3rdParty\GameAnalytics\Editor\GA_SignUp.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Analytics\GameAnalytics\3rdParty\GameAnalytics\Editor\GA_UpdateWindow.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Analytics\GameAnalytics\3rdParty\GameAnalytics\Editor\GameAnalyticsInspector.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Analytics\GameAnalytics\3rdParty\GameAnalytics\Plugins\Playmaker\Editor\PlayMakerPresenceCheck.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Analytics\GameAnalytics\3rdParty\GameAnalytics\Plugins\Playmaker\Editor\SendProgressionEventActionEditor.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Analytics\GameAnalytics\3rdParty\GameAnalytics\Plugins\Playmaker\Editor\SendResourceEventActionEditor.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Analytics\GameAnalytics\3rdParty\GameAnalytics\Plugins\Playmaker\Editor\SetGenderActionEditor.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Analytics\GameAnalytics\Internal\Editor\GameAnalyticsPreBuild.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Internal\Android\Editor\AndroidPostbuild.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Internal\Android\Editor\AndroidPrebuild.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Internal\BuildErrorManager\Editor\BuildErrorConfig.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Internal\BuildErrorManager\Editor\BuildErrorWindow.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Internal\IOS\Editor\IOSPrebuild.cs" />
+    <Compile Include="Assets\VoodooPackages\TinySauce\Internal\Settings\Editor\TinySauceSettingsEditor.cs" />
+    <None Include="Assets\VoodooPackages\TinySauce\Analytics\Facebook\3rdParty\FacebookSDK\Plugins\Editor\Facebook.Unity.Editor\android\DefaultAndroidManifest.xml" />
     <None Include="Assets\ExternalDependencyManager\Editor\GoogleRegistries.xml" />
     <None Include="Assets\Extensions\GooglePlayGames\Editor\m2repository\com\google\games\gpgs-plugin-support\maven-metadata.xml" />
+    <None Include="Assets\VoodooPackages\TinySauce\Analytics\GameAnalytics\3rdParty\GameAnalytics\Editor\GameAnalyticsDependencies.xml" />
+    <None Include="Assets\VoodooPackages\TinySauce\Analytics\Facebook\3rdParty\FacebookSDK\Plugins\Editor\Dependencies.xml" />
     <None Include="Assets\ExternalDependencyManager\Editor\external-dependency-manager_version-1.2.153_manifest.txt" />
     <None Include="Assets\Firebase\Editor\FirebaseAuth_version-6.14.0_manifest.txt" />
     <None Include="Assets\Extensions\GooglePlayGames\Editor\GooglePlayGamesPluginDependencies.xml" />
@@ -97,79 +143,79 @@
     <None Include="Assets\Firebase\Editor\FirebaseMessaging_version-6.14.0_manifest.txt" />
     <None Include="Assets\Firebase\Editor\AnalyticsDependencies.xml" />
     <Reference Include="UnityEditor.TestRunner">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TestRunner">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.multiplayer-hlapi.Editor">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.EditorCoroutines.Editor">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Library/ScriptAssemblies/Unity.EditorCoroutines.Editor.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Library/ScriptAssemblies/Unity.EditorCoroutines.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.MemoryProfiler">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Library/ScriptAssemblies/Unity.MemoryProfiler.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Library/ScriptAssemblies/Unity.MemoryProfiler.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.multiplayer-weaver.Editor">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.XR.LegacyInputHelpers">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.DeviceSimulator.Editor">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Library/ScriptAssemblies/Unity.DeviceSimulator.Editor.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Library/ScriptAssemblies/Unity.DeviceSimulator.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.SpatialTracking">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.XR.LegacyInputHelpers">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.multiplayer-hlapi.Runtime">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.MemoryProfiler.Editor">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Library/ScriptAssemblies/Unity.MemoryProfiler.Editor.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Library/ScriptAssemblies/Unity.MemoryProfiler.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -364,121 +410,133 @@
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="Google.IOSResolver_v1.2.153">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Assets/ExternalDependencyManager/Editor/Google.IOSResolver_v1.2.153.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Assets/ExternalDependencyManager/Editor/Google.IOSResolver_v1.2.153.dll</HintPath>
     </Reference>
     <Reference Include="Google.JarResolver_v1.2.153">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Assets/ExternalDependencyManager/Editor/Google.JarResolver_v1.2.153.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Assets/ExternalDependencyManager/Editor/Google.JarResolver_v1.2.153.dll</HintPath>
     </Reference>
     <Reference Include="Google.PackageManagerResolver_v1.2.153">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Assets/ExternalDependencyManager/Editor/Google.PackageManagerResolver_v1.2.153.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Assets/ExternalDependencyManager/Editor/Google.PackageManagerResolver_v1.2.153.dll</HintPath>
     </Reference>
     <Reference Include="Google.VersionHandler">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Assets/ExternalDependencyManager/Editor/Google.VersionHandler.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Assets/ExternalDependencyManager/Editor/Google.VersionHandler.dll</HintPath>
     </Reference>
     <Reference Include="Google.VersionHandlerImpl_v1.2.153">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Assets/ExternalDependencyManager/Editor/Google.VersionHandlerImpl_v1.2.153.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Assets/ExternalDependencyManager/Editor/Google.VersionHandlerImpl_v1.2.153.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.Editor">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Assets/Firebase/Editor/Firebase.Editor.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Assets/Firebase/Editor/Firebase.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.Messaging.Editor">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Assets/Firebase/Editor/Firebase.Messaging.Editor.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Assets/Firebase/Editor/Firebase.Messaging.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.Analytics">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Assets/Firebase/Plugins/Firebase.Analytics.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Assets/Firebase/Plugins/Firebase.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.App">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Assets/Firebase/Plugins/Firebase.App.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Assets/Firebase/Plugins/Firebase.App.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.Auth">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Assets/Firebase/Plugins/Firebase.Auth.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Assets/Firebase/Plugins/Firebase.Auth.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.Messaging">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Assets/Firebase/Plugins/Firebase.Messaging.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Assets/Firebase/Plugins/Firebase.Messaging.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.Platform">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Assets/Firebase/Plugins/Firebase.Platform.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Assets/Firebase/Plugins/Firebase.Platform.dll</HintPath>
     </Reference>
     <Reference Include="Firebase.TaskExtension">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Assets/Firebase/Plugins/Firebase.TaskExtension.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Assets/Firebase/Plugins/Firebase.TaskExtension.dll</HintPath>
     </Reference>
     <Reference Include="Google.MiniJson">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Assets/Firebase/Plugins/Google.MiniJson.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Assets/Firebase/Plugins/Google.MiniJson.dll</HintPath>
     </Reference>
     <Reference Include="OPS.Mono.Cecil">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Assets/OPS/Editor/Plugins/Mono.Cecil/OPS.Mono.Cecil.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Assets/OPS/Editor/Plugins/Mono.Cecil/OPS.Mono.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="OPS.Mono.Cecil.Mdb">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Assets/OPS/Editor/Plugins/Mono.Cecil/OPS.Mono.Cecil.Mdb.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Assets/OPS/Editor/Plugins/Mono.Cecil/OPS.Mono.Cecil.Mdb.dll</HintPath>
     </Reference>
     <Reference Include="OPS.Mono.Cecil.Pdb">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Assets/OPS/Editor/Plugins/Mono.Cecil/OPS.Mono.Cecil.Pdb.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Assets/OPS/Editor/Plugins/Mono.Cecil/OPS.Mono.Cecil.Pdb.dll</HintPath>
     </Reference>
     <Reference Include="OPS.Mono.Cecil.Rocks">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Assets/OPS/Editor/Plugins/Mono.Cecil/OPS.Mono.Cecil.Rocks.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Assets/OPS/Editor/Plugins/Mono.Cecil/OPS.Mono.Cecil.Rocks.dll</HintPath>
     </Reference>
     <Reference Include="OPS.Obfuscator.Editor">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Assets/OPS/Obfuscator.Free/Editor/Plugins/OPS.Obfuscator.Editor.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Assets/OPS/Obfuscator.Free/Editor/Plugins/OPS.Obfuscator.Editor.dll</HintPath>
     </Reference>
     <Reference Include="OPS.Obfuscator">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Assets/OPS/Obfuscator.Free/Plugins/OPS.Obfuscator.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Assets/OPS/Obfuscator.Free/Plugins/OPS.Obfuscator.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Compat">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Assets/Parse/Plugins/dotNet45/Unity.Compat.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Assets/Parse/Plugins/dotNet45/Unity.Compat.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Tasks">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Assets/Parse/Plugins/dotNet45/Unity.Tasks.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Assets/Parse/Plugins/dotNet45/Unity.Tasks.dll</HintPath>
     </Reference>
     <Reference Include="Photon3Unity3D">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Assets/Photon/PhotonLibs/Photon3Unity3D.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Assets/Photon/PhotonLibs/Photon3Unity3D.dll</HintPath>
     </Reference>
     <Reference Include="websocket-sharp">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Assets/Photon/PhotonLibs/WebSocket/websocket-sharp.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Assets/Photon/PhotonLibs/WebSocket/websocket-sharp.dll</HintPath>
     </Reference>
     <Reference Include="UDP">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Assets/Plugins/UDP/UDP.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Assets/Plugins/UDP/UDP.dll</HintPath>
     </Reference>
     <Reference Include="Editor">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Assets/Plugins/UnityPurchasing/Bin/Editor.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Assets/Plugins/UnityPurchasing/Bin/Editor.dll</HintPath>
     </Reference>
     <Reference Include="Purchasing.Common">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Assets/Plugins/UnityPurchasing/Bin/Purchasing.Common.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Assets/Plugins/UnityPurchasing/Bin/Purchasing.Common.dll</HintPath>
     </Reference>
     <Reference Include="Stores">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Assets/Plugins/UnityPurchasing/Bin/Stores.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Assets/Plugins/UnityPurchasing/Bin/Stores.dll</HintPath>
     </Reference>
     <Reference Include="Apple">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Assets/Plugins/UnityPurchasing/Bin/Apple/Apple.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Assets/Plugins/UnityPurchasing/Bin/Apple/Apple.dll</HintPath>
     </Reference>
     <Reference Include="FacebookStore">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Assets/Plugins/UnityPurchasing/Bin/Facebook/FacebookStore.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Assets/Plugins/UnityPurchasing/Bin/Facebook/FacebookStore.dll</HintPath>
     </Reference>
     <Reference Include="Security">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Assets/Plugins/UnityPurchasing/Bin/Security/live/Security.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Assets/Plugins/UnityPurchasing/Bin/Security/live/Security.dll</HintPath>
     </Reference>
     <Reference Include="Tizen">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Assets/Plugins/UnityPurchasing/Bin/Tizen/Tizen.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Assets/Plugins/UnityPurchasing/Bin/Tizen/Tizen.dll</HintPath>
     </Reference>
     <Reference Include="winrt">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Assets/Plugins/UnityPurchasing/winrt/winrt.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Assets/Plugins/UnityPurchasing/winrt/winrt.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Library/PackageCache/com.unity.analytics@3.3.5/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Library/PackageCache/com.unity.analytics@3.3.5/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Library/PackageCache/com.unity.analytics@3.3.5/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Purchasing">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Library/PackageCache/com.unity.purchasing@2.0.6/UnityEngine.Purchasing.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Library/PackageCache/com.unity.purchasing@2.0.6/UnityEngine.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Purchasing">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook.Unity">
+      <HintPath>D:/Project/BlockPuzzelMulti/Assets/VoodooPackages/TinySauce/Analytics/Facebook/3rdParty/FacebookSDK/Plugins/Facebook.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="FacebookNamedPipeClient">
+      <HintPath>D:/Project/BlockPuzzelMulti/Assets/VoodooPackages/TinySauce/Analytics/Facebook/3rdParty/FacebookSDK/Plugins/Gameroom/FacebookNamedPipeClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook.Unity.Gameroom">
+      <HintPath>D:/Project/BlockPuzzelMulti/Assets/VoodooPackages/TinySauce/Analytics/Facebook/3rdParty/FacebookSDK/Plugins/Gameroom/Facebook.Unity.Gameroom.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook.Unity.Settings">
+      <HintPath>D:/Project/BlockPuzzelMulti/Assets/VoodooPackages/TinySauce/Analytics/Facebook/3rdParty/FacebookSDK/Plugins/Settings/Facebook.Unity.Settings.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>D:/Project/Git_Block_Puzzle_Multi/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
+      <HintPath>D:/Project/BlockPuzzelMulti/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.2f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -837,55 +895,55 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{5A6DEA8F-92E8-C8C2-F613-9817B7202E2C}</Project>
+      <Project>{8BEB00A5-32D5-A6DB-B880-3379AB1D60F4}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{A49E94BA-9BDD-D025-9519-1EB30F90ABFC}</Project>
+      <Project>{B7545AF5-543E-3D53-42B5-EF35890C20F8}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
     <ProjectReference Include="Assembly-CSharp-Editor-firstpass.csproj">
-      <Project>{BE08C83F-A411-962B-42AE-6C83F83C13F0}</Project>
+      <Project>{FFAC5F23-7E8E-8C42-1376-91D4560DDE13}</Project>
       <Name>Assembly-CSharp-Editor-firstpass</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Utilities.PhotonPlayer.Editor.csproj">
-      <Project>{D3E6142C-7EB2-F529-796D-376605B6781A}</Project>
+      <Project>{5FEA8D59-7A6D-5FB7-7F2D-E0948E5EA715}</Project>
       <Name>PhotonUnityNetworking.Utilities.PhotonPlayer.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Utilities.csproj">
-      <Project>{59B05241-DF99-B21C-4497-3A1EBDD5A909}</Project>
+      <Project>{A7700DDA-A34E-10B9-5E7A-9F8F336C9728}</Project>
       <Name>PhotonUnityNetworking.Utilities</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonWebSocket.csproj">
-      <Project>{70E564E4-B8E6-A7BD-50DD-FF0F1F34906D}</Project>
+      <Project>{663F10B0-A904-514F-1A2F-23CE98A40D99}</Project>
       <Name>PhotonWebSocket</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonRealtime.csproj">
-      <Project>{6297F2C1-7E2F-AA72-400D-1F2503462E70}</Project>
+      <Project>{6E32F9DB-11DF-83F3-6EB7-BD75DE70DF4F}</Project>
       <Name>PhotonRealtime</Name>
     </ProjectReference>
     <ProjectReference Include="GoogleMobileAds.csproj">
-      <Project>{8E59DECB-1844-38CF-38E2-79C791418DA7}</Project>
+      <Project>{BBEA9655-B519-49BD-27B1-1EF6A656B8D2}</Project>
       <Name>GoogleMobileAds</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.csproj">
-      <Project>{05D97193-F23A-D5BC-A1BA-F822D40B2CE3}</Project>
+      <Project>{610C71A0-5EF9-0C5F-B944-4CCF4C674F84}</Project>
       <Name>PhotonUnityNetworking</Name>
     </ProjectReference>
     <ProjectReference Include="GoogleMobileAds.Editor.csproj">
-      <Project>{B23475CD-B012-6009-9C97-B415C4CD769D}</Project>
+      <Project>{6CB6766A-3EE4-1470-5B0F-D474F70405D1}</Project>
       <Name>GoogleMobileAds.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonChat.csproj">
-      <Project>{81472012-2A07-6C6D-4784-06711B7B0633}</Project>
+      <Project>{FEC9395B-02FA-83B4-B13A-B762B81A2488}</Project>
       <Name>PhotonChat</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Utilities.Culling.Editor.csproj">
-      <Project>{B8B09A6A-153F-4A54-9371-2846E22ABEAD}</Project>
+      <Project>{15E66D36-2E10-F18E-0F51-6F77A6F04D4A}</Project>
       <Name>PhotonUnityNetworking.Utilities.Culling.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Editor.csproj">
-      <Project>{30079924-01EC-7497-4A05-ED5E8B1C85AB}</Project>
+      <Project>{BA60E36A-BD92-34AA-85FC-3D246D305983}</Project>
       <Name>PhotonUnityNetworking.Editor</Name>
     </ProjectReference>
   </ItemGroup>

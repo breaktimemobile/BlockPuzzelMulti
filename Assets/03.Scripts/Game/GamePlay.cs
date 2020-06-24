@@ -96,6 +96,9 @@ public class GamePlay : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
 
     public void Start_Game()
     {
+
+        TinySauce.OnGameStarted();
+
         switch (gameMode)
         {
 
@@ -594,6 +597,9 @@ public class GamePlay : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
 
    IEnumerator Co_GameOver(bool isClear = false)
     {
+
+        TinySauce.OnGameFinished(ScoreManager.Instance.GetScore());
+
         UIManager.Instance.game_Stat = Game_Stat.End;
 
         List<Block> shuffleBlock = new List<Block>();
