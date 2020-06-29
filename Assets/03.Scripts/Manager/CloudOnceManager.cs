@@ -13,6 +13,7 @@ public class CloudOnceManager : MonoBehaviour
         Instance = this;
         Cloud.OnInitializeComplete += CloudOnceInitializeComplete;
         Cloud.OnCloudLoadComplete += CloudeLoad;
+        Cloud.OnCloudSaveComplete += CloudeSave;
 
         Cloud.Initialize(true, false,false);
     }
@@ -44,12 +45,20 @@ public class CloudOnceManager : MonoBehaviour
         }
     }
 
+    public void CloudeSave(bool success)
+    {
+        Debug.Log(success?"저장 성공" : "저장 실패");
+    }
+
     public void CloudeLoad(bool success)
     {
         if (!success)
             return;
 
+
         string str = CloudVariables.Player_Data;
+
+        Debug.Log(success ? "로드 성공 " + str : "로드 실패");
 
         if (str != "")
         {
@@ -58,12 +67,14 @@ public class CloudOnceManager : MonoBehaviour
             DataManager.Instance.state_Player= data;
             DataManager.Instance.Save_Player_Data();
 
+            Language.GetInstance().Set(Application.systemLanguage);
+            UIManager.Instance.SetUi();
+
+            UIManager.Instance.Check_Daily();
+
         }
 
-        Language.GetInstance().Set(Application.systemLanguage);
-        UIManager.Instance.SetUi();
-
-        UIManager.Instance.Check_Daily();
+     
     }
 
     public void Save()
