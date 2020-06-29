@@ -78,11 +78,14 @@ public class SocialManager : MonoBehaviour
 
     public void Btn_Logout()
     {
+#if UNITY_ANDROID
         ((PlayGamesPlatform)Social.Active).SignOut(); //로그아웃
 
         UIManager.Instance.PopPopup();
 
         DataManager.Instance.ResetData();
+#endif
+
     }
     private void OnApplicationFocus(bool focus)
     {

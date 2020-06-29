@@ -68,11 +68,11 @@
     <Compile Include="Assets\GoogleMobileAds\Editor\ManifestProcessor.cs" />
     <Compile Include="Assets\GoogleMobileAds\Editor\PListProcessor.cs" />
     <None Include="Assets\GoogleMobileAds\Editor\GoogleMobileAdsDependencies.xml" />
-    <Reference Include="UnityEngine.UI">
-      <HintPath>D:/Project/BlockPuzzelMulti/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>D:/Project/BlockPuzzelMulti/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>D:/Project/BlockPuzzelMulti/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.TestRunner">
       <HintPath>D:/Project/BlockPuzzelMulti/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
