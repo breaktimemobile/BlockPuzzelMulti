@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using CloudOnce;
+using UnityEngine.UI;
 
 public class CloudOnceManager : MonoBehaviour
 {
@@ -11,12 +12,79 @@ public class CloudOnceManager : MonoBehaviour
     {
         Instance = this;
         Cloud.OnInitializeComplete += CloudOnceInitializeComplete;
-        Cloud.Initialize(true, false);
+        Cloud.OnCloudLoadComplete += CloudeLoad;
+
+        Cloud.Initialize(true, false,false);
     }
 
     private void Start()
     {
         FireBaseManager.Instance.FirebaseNullLogin();
+    }
+
+
+    public void CloudOnceInitializeComplete()
+    {
+        Debug.Log("클라우드 완료");
+        Cloud.OnInitializeComplete -= CloudOnceInitializeComplete;
+
+    }
+  
+    public void Load()
+    {
+
+        if (!Cloud.IsSignedIn)
+        {
+            UIManager.Instance.Set_Google_Txt();
+            UIManager.Instance.PushPopup(UIManager.Instance.GooglePopup);
+        }
+        else
+        {
+            Cloud.Storage.Load();
+        }
+    }
+
+    public void CloudeLoad(bool success)
+    {
+        if (!success)
+            return;
+
+        string str = CloudVariables.Player_Data;
+
+        if (str != "")
+        {
+            var aes = AESCrypto.instance.AESDecrypt128(str);
+            var data = JsonUtility.FromJson<State_Player>(aes);
+            DataManager.Instance.state_Player= data;
+            DataManager.Instance.Save_Player_Data();
+
+        }
+
+        Language.GetInstance().Set(Application.systemLanguage);
+        UIManager.Instance.SetUi();
+
+        UIManager.Instance.Check_Daily();
+    }
+
+    public void Save()
+    {
+        Debug.Log("저장 세팅");
+
+        if (!Cloud.IsSignedIn)
+        {
+            UIManager.Instance.Set_Google_Txt();
+            UIManager.Instance.PushPopup(UIManager.Instance.GooglePopup);
+        }
+        else
+        {
+            string jsonStr = JsonUtility.ToJson(DataManager.Instance.state_Player);
+            string aes = AESCrypto.instance.AESEncrypt128(jsonStr);
+
+            CloudVariables.Player_Data = aes;
+
+            Cloud.Storage.Save();
+
+        }
 
     }
 
@@ -29,40 +97,33 @@ public class CloudOnceManager : MonoBehaviour
     public void Logout()
     {
         Cloud.SignOut();
+
         UIManager.Instance.PopPopup();
 
+        DataManager.Instance.ResetData();
     }
+
+    string token = "";
 
     void authenticateCallBck(bool sucess)
     {
         if (sucess)
         {
+
             PlayerPrefs.SetInt("Login", 1);
-            Debug.Log("로그인 성공 " + PlayerPrefs.GetInt("Login", 0));
 
             UIManager.Instance.PopPopup();
             UIManager.Instance.Set_Google_Txt();
-            //FireBaseManager.Instance.FireBaseGoogleLogin();
 
         }
         else
         {
             PlayerPrefs.SetInt("Login", 0);
-            Debug.Log("로그인 실패 " + PlayerPrefs.GetInt("Login", 0));
 
-            UIManager.Instance.Set_Google_Txt();
-
+  
         }
     }
-
-    public void CloudOnceInitializeComplete()
-    {
-        Cloud.OnInitializeComplete -= CloudOnceInitializeComplete;
-
-        // Do anything that requires CloudOnce to be initialized,
-        // for example disabling your loading screen
-    }
-
+    
     public void Report_Achievements()
     {
         switch (DataManager.Instance.state_Player.clear_Stage.Count)

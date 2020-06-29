@@ -13,7 +13,7 @@ public class State_Player
     public int starGift = 1;                       //누적 별 보상 몇번 받았는지
     public bool noAds = false;                     //광고 구매 여부
     public string giftTime = "";                   //선물 받은 시간
-    public string shopgiftTime = "";                   //선물 받은 시간
+    public string shopgiftTime = "";               //선물 받은 시간
     public string daily = "";                      //데일리 받은 시간
     public bool isDaily = false;                   //오늘 데일리 받은 여부
     public int daily_Num = 0;                      //데일리 몇번째인지
@@ -22,7 +22,7 @@ public class State_Player
     public bool Check_Privacy = false;             //이용약관 체크
     public int Classic = 0;                        //클래식 점수
     public bool Check_Review = false;              //리뷰 체크
-    public int Timer_Score = 0;                        //클래식 점수
+    public int Timer_Score = 0;                    //클래식 점수
 
 }
 
@@ -83,7 +83,6 @@ public class DataManager : MonoBehaviour
         dailygift_data = CSVReader.Read("dailygift");
         global_data = CSVReader.Read("global");
 
-        
     }
 
     /// <summary>
@@ -158,4 +157,14 @@ public class DataManager : MonoBehaviour
         return false;
     }
 
+    public void ResetData()
+    {
+        state_Player = new State_Player();
+        Save_Player_Data();
+
+        Language.GetInstance().Set(Application.systemLanguage);
+        UIManager.Instance.SetUi();
+
+        UIManager.Instance.Check_Daily();
+    }
 }

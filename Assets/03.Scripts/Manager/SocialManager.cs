@@ -35,6 +35,7 @@ public class SocialManager : MonoBehaviour
         //구글 서비스 활성화
 
 #if UNITY_ANDROID
+
         PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder()
             .EnableSavedGames()
             .Build();
@@ -442,8 +443,6 @@ public class SocialManager : MonoBehaviour
         DataManager.Instance.state_Player = data;
 
         DataManager.Instance.Save_Player_Data();
-
-        LanguageManager.Instance.Get_Language();
 
         UIManager.Instance.SetUi();
 

@@ -1349,11 +1349,11 @@ public class UIManager : MonoBehaviour
         Btn_Setting_Effect.onClick.AddListener(() => AudioManager.instance.ToggleEffectStatus());
         Btn_Setting_Effect.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_circle));
 
-        Btn_Setting_Save.onClick.AddListener(() => SocialManager.Instance.ShowSaveSelectUI());
+        Btn_Setting_Save.onClick.AddListener(() => CloudOnceManager.Instance.Save());
         Btn_Setting_Save.onClick.AddListener(() => FireBaseManager.Instance.LogEvent("Setting_Google_Save"));
         Btn_Setting_Save.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_circle));
 
-        Btn_Setting_Load.onClick.AddListener(() => SocialManager.Instance.ShowLoadSelectUI());
+        Btn_Setting_Load.onClick.AddListener(() => CloudOnceManager.Instance.Load());
         Btn_Setting_Load.onClick.AddListener(() => FireBaseManager.Instance.LogEvent("Setting_Google_Load"));
         Btn_Setting_Load.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_circle));
 
