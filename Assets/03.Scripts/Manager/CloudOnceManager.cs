@@ -40,11 +40,14 @@ public class CloudOnceManager : MonoBehaviour
         }
         else
         {
+            UIManager.Instance.PopPopup();
+
+            StartCoroutine("Load_Txt");
+
             Cloud.OnCloudLoadComplete += CloudeLoad;
 
             Cloud.Storage.Load();
 
-            StartCoroutine("Load_Txt");
         }
     }
 
@@ -118,6 +121,7 @@ public class CloudOnceManager : MonoBehaviour
         }
         else
         {
+            UIManager.Instance.PopPopup();
 
             StartCoroutine("Save_Txt");
 
