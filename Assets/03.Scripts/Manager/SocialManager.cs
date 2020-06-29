@@ -70,36 +70,20 @@ public class SocialManager : MonoBehaviour
 
     }
 
+    public void Btn_Login()
+    {
+        Social.localUser.Authenticate((authenticateCallBck));
 
-//    public void Btn_Login()
-//    {
-//        //로그인
+    }
 
-//        if (!Social.localUser.authenticated)
-//        {
+    public void Btn_Logout()
+    {
+        ((PlayGamesPlatform)Social.Active).SignOut(); //로그아웃
 
-//            Debug.Log("로그인 시작");
-//            Social.localUser.Authenticate((authenticateCallBck));
+        UIManager.Instance.PopPopup();
 
-//        }
-
-//    }
-
-//    /// <summary>
-//    /// 로그아웃
-//    /// </summary>
-//    public void Btn_Logout()
-//    {
-//#if UNITY_ANDROID
-//        ((PlayGamesPlatform)Social.Active).SignOut();
-//        isLogin = false;
-//        PlayerPrefs.SetInt("Login", 0);
-
-//        UIManager.Instance.PopPopup();
-//#endif
-//    }
-
-
+        DataManager.Instance.ResetData();
+    }
     private void OnApplicationFocus(bool focus)
     {
         if (!focus)
@@ -354,6 +338,10 @@ public class SocialManager : MonoBehaviour
         }
     }
 
+    public void Buy_Save_data()
+    {
+
+    }
 #endregion
 
 #region Google Cloud Load

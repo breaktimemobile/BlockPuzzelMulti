@@ -12,7 +12,6 @@ public class CloudOnceManager : MonoBehaviour
     {
         Instance = this;
         Cloud.OnInitializeComplete += CloudOnceInitializeComplete;
-        Cloud.OnCloudLoadComplete += CloudeLoad;
         Cloud.OnCloudSaveComplete += CloudeSave;
 
         Cloud.Initialize(true, false,false);
@@ -41,7 +40,11 @@ public class CloudOnceManager : MonoBehaviour
         }
         else
         {
+            Cloud.OnCloudLoadComplete += CloudeLoad;
+
             Cloud.Storage.Load();
+
+            StartCoroutine("Load_Txt");
         }
     }
 
@@ -52,6 +55,8 @@ public class CloudOnceManager : MonoBehaviour
 
     public void CloudeLoad(bool success)
     {
+        Cloud.OnCloudLoadComplete -= CloudeLoad;
+
         if (!success)
             return;
 
@@ -62,6 +67,7 @@ public class CloudOnceManager : MonoBehaviour
 
         if (str != "")
         {
+
             var aes = AESCrypto.instance.AESDecrypt128(str);
             var data = JsonUtility.FromJson<State_Player>(aes);
             DataManager.Instance.state_Player= data;
@@ -72,9 +78,33 @@ public class CloudOnceManager : MonoBehaviour
 
             UIManager.Instance.Check_Daily();
 
+            UIManager.Instance.Start_TxtStat(false);
+
+            UIManager.Instance.End_TxtStat(false);
+
         }
 
      
+    }
+
+    IEnumerator Save_Txt()
+    {
+        UIManager.Instance.Start_TxtStat(true);
+
+        yield return new WaitForSeconds(2.0f);
+
+        UIManager.Instance.End_TxtStat(true);
+
+    }
+
+    IEnumerator Load_Txt()
+    {
+        UIManager.Instance.Start_TxtStat(false);
+
+        yield return new WaitForSeconds(2.0f);
+
+        UIManager.Instance.End_TxtStat(false);
+
     }
 
     public void Save()
@@ -88,6 +118,9 @@ public class CloudOnceManager : MonoBehaviour
         }
         else
         {
+
+            StartCoroutine("Save_Txt");
+
             string jsonStr = JsonUtility.ToJson(DataManager.Instance.state_Player);
             string aes = AESCrypto.instance.AESEncrypt128(jsonStr);
 

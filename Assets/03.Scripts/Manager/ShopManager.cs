@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CloudOnce;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,7 +17,7 @@ public class ShopManager : MonoBehaviour
 
     public Shop_Info Gift_Shop_Info;
 
-    
+
     private void Awake()
     {
         Instance = this;
@@ -69,7 +70,7 @@ public class ShopManager : MonoBehaviour
 
         StartCoroutine(Co_Touch());
 
-        Dictionary<string, object> Shop_data = DataManager.Instance.shop_data.Find(x => ((int)x["num"]).Equals(index +1));
+        Dictionary<string, object> Shop_data = DataManager.Instance.shop_data.Find(x => ((int)x["num"]).Equals(index + 1));
         int val = 0;
         switch ((int)Shop_data["shop_type"])
         {
@@ -151,6 +152,20 @@ public class ShopManager : MonoBehaviour
                 break;
 
         }
+
+
+
+#if UNITY_ANDROID
+        SocialManager.Instance.Player_Data_Save();
+#elif UNITY_IOS
+        string jsonStr = JsonUtility.ToJson(DataManager.Instance.state_Player);
+        string aes = AESCrypto.instance.AESEncrypt128(jsonStr);
+
+        CloudVariables.Player_Data = aes;
+
+        Cloud.Storage.Save();
+#endif
+
     }
 
     IEnumerator Co_Touch()

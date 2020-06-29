@@ -7,6 +7,7 @@ using System;
 using Random = UnityEngine.Random;
 using Photon.Pun;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
+using CloudOnce;
 
 #if UNITY_IOS
 using UnityEngine.iOS;
@@ -150,10 +151,11 @@ public class UIManager : MonoBehaviour
     private GameObject TutoMsgPopup;
     private GameObject BestPopup;
     private GameObject SelectPopup;
+    private GameObject SaveLoadPopup;
 
-#endregion
+    #endregion
 
-#region PausePopup
+    #region PausePopup
 
     private Button Btn_Pause_Music;
     private Button Btn_Pause_Effect;
@@ -457,8 +459,17 @@ public class UIManager : MonoBehaviour
     private Button Btn_9x9;
     private Button Btn_Select_Back;
 
-#endregion
+    #endregion
 
+    #region SaveLoadPopup
+
+    private Button Btn_SaveLoad_Back;
+    private Text Txt_SaveLoad_Save;
+    private Text Txt_SaveLoad_Load;
+    private Button Btn_SaveLoad_Save;
+    private Button Btn_SaveLoad_Load;
+
+    #endregion
 
 
     [SerializeField] private GameObject Stage_Block;
@@ -682,11 +693,12 @@ public class UIManager : MonoBehaviour
         TutoMsgPopup = Popup.transform.Find("TutoMsgPopup").gameObject;
         BestPopup = Popup.transform.Find("BestPopup").gameObject;
         SelectPopup = Popup.transform.Find("SelectPopup").gameObject;
+        SaveLoadPopup = Popup.transform.Find("SaveLoadPopup").gameObject;
 
-#endregion
+        #endregion
 
 
-#region PausePopup
+        #region PausePopup
 
         Btn_Pause_Music = PausePopup.transform.Find("Btn_Pause_Music").GetComponent<Button>();
         Btn_Pause_Effect = PausePopup.transform.Find("Btn_Pause_Effect").GetComponent<Button>();
@@ -1070,8 +1082,18 @@ public class UIManager : MonoBehaviour
         Btn_9x9 = SelectPopup.transform.Find("Btn_9x9").GetComponent<Button>();
         Btn_Select_Back = SelectPopup.transform.Find("Btn_Select_Back").GetComponent<Button>();
 
-#endregion
+        #endregion
 
+
+        #region SaveLoadPopup
+
+        Btn_SaveLoad_Back = SaveLoadPopup.transform.Find("Btn_SaveLoad_Back").GetComponent<Button>();
+        Txt_SaveLoad_Save = SaveLoadPopup.transform.Find("Txt_SaveLoad_Save").GetComponent<Text>();
+        Txt_SaveLoad_Load = SaveLoadPopup.transform.Find("Txt_SaveLoad_Load").GetComponent<Text>();
+        Btn_SaveLoad_Save = SaveLoadPopup.transform.Find("Btn_SaveLoad_Save").GetComponent<Button>();
+        Btn_SaveLoad_Load = SaveLoadPopup.transform.Find("Btn_SaveLoad_Load").GetComponent<Button>();
+
+        #endregion
     }
 
     /// <summary>
@@ -1349,11 +1371,21 @@ public class UIManager : MonoBehaviour
         Btn_Setting_Effect.onClick.AddListener(() => AudioManager.instance.ToggleEffectStatus());
         Btn_Setting_Effect.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_circle));
 
-        Btn_Setting_Save.onClick.AddListener(() => CloudOnceManager.Instance.Save());
+#if UNITY_ANDROID
+        Btn_Setting_Save.onClick.AddListener(() => SocialManager.Instance.ShowSaveSelectUI());
+#elif UNITY_IOS
+
+        Btn_Setting_Save.onClick.AddListener(() => Set_SaveLoad_Txt(true));
+
+#endif
         Btn_Setting_Save.onClick.AddListener(() => FireBaseManager.Instance.LogEvent("Setting_Google_Save"));
         Btn_Setting_Save.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_circle));
 
-        Btn_Setting_Load.onClick.AddListener(() => CloudOnceManager.Instance.Load());
+#if UNITY_ANDROID
+        Btn_Setting_Load.onClick.AddListener(() => SocialManager.Instance.ShowLoadSelectUI());
+#elif UNITY_IOS
+        Btn_Setting_Load.onClick.AddListener(() => Set_SaveLoad_Txt(false));
+#endif
         Btn_Setting_Load.onClick.AddListener(() => FireBaseManager.Instance.LogEvent("Setting_Google_Load"));
         Btn_Setting_Load.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_circle));
 
@@ -1479,11 +1511,26 @@ public class UIManager : MonoBehaviour
         Btn_Google_Back.onClick.AddListener(() => FireBaseManager.Instance.LogEvent("Main_Google_Close"));
         Btn_Google_Back.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_close));
 
+#if UNITY_ANDROID
+
+        Btn_Google_Login.onClick.AddListener(() => SocialManager.Instance.Btn_Login());
+
+#elif UNITY_IOS
         Btn_Google_Login.onClick.AddListener(() => CloudOnceManager.Instance.Login());
+
+#endif
         Btn_Google_Login.onClick.AddListener(() => FireBaseManager.Instance.LogEvent("Main_Google_Login"));
         Btn_Google_Login.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_square));
 
+
+#if UNITY_ANDROID
+
+        Btn_Google_Logout.onClick.AddListener(() => SocialManager.Instance.Btn_Logout());
+
+#elif UNITY_IOS
         Btn_Google_Logout.onClick.AddListener(() => CloudOnceManager.Instance.Logout());
+
+#endif
         Btn_Google_Logout.onClick.AddListener(() => FireBaseManager.Instance.LogEvent("Main_Google_Logout"));
         Btn_Google_Logout.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_square));
 
@@ -1651,9 +1698,18 @@ public class UIManager : MonoBehaviour
 
 #endregion
 
+
+
+        #region SaveLoadPopup
+
+        Btn_SaveLoad_Back.onClick.AddListener(() => PopPopup());
+        Btn_SaveLoad_Save.onClick.AddListener(() => CloudOnceManager.Instance.Save());
+        Btn_SaveLoad_Load.onClick.AddListener(() => CloudOnceManager.Instance.Load());
+
+        #endregion
     }
 
-    public void Shop_Banner()
+public void Shop_Banner()
     {
         if (game_Stat.Equals(Game_Stat.End))
         {
@@ -3096,6 +3152,7 @@ public class UIManager : MonoBehaviour
         Txt_Ios_Title_Login.gameObject.SetActive(false);
 
 #else
+        Btn_Setting_Google_Logout.gameObject.SetActive(false);
         Txt_Google_Title_Login.gameObject.SetActive(false);
         Txt_Google_Title_Logout.gameObject.SetActive(false);
         Txt_Ios_Title_Login.gameObject.SetActive(!Social.localUser.authenticated);
@@ -4135,6 +4192,26 @@ public class UIManager : MonoBehaviour
 
         }
 
+    }
+
+    public void Set_SaveLoad_Txt(bool save)
+    {
+        Txt_SaveLoad_Save.gameObject.SetActive(save);
+        Txt_SaveLoad_Load.gameObject.SetActive(!save);
+
+        Btn_SaveLoad_Save.gameObject.SetActive(save);
+        Btn_SaveLoad_Load.gameObject.SetActive(!save);
+
+        if (!Cloud.IsSignedIn)
+        {
+            Set_Google_Txt();
+            PushPopup(GooglePopup);
+        }
+        else
+        {
+            PushPopup(SaveLoadPopup);
+
+        }
     }
 }
 

@@ -163,8 +163,11 @@ public class DataManager : MonoBehaviour
         Save_Player_Data();
 
         Language.GetInstance().Set(Application.systemLanguage);
+
         UIManager.Instance.SetUi();
 
         UIManager.Instance.Check_Daily();
+
+        UIManager.Instance.Set_Google_Txt();
     }
 }
