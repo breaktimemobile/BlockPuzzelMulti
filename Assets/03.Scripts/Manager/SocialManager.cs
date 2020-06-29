@@ -44,7 +44,7 @@ public class SocialManager : MonoBehaviour
         PlayGamesPlatform.DebugLogEnabled = true;
         PlayGamesPlatform.Activate();
 
-#else
+#elif UNITY_IOS
 
         GameCenterPlatform.ShowDefaultAchievementCompletionBanner(true);
  
