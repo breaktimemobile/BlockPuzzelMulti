@@ -196,7 +196,7 @@ public class Shop_Info : MonoBehaviour
 
                 Btn_Shop_Item_Buy.onClick.AddListener(() => AdsManager.Instance.ShowRewardedAd());
 
-
+                Debug.Log("썁 광고 세팅");
                 break;
             default:
                 break;

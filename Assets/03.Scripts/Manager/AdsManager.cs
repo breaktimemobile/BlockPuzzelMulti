@@ -371,6 +371,7 @@ public class AdsManager : MonoBehaviour
             case Enum_Gift.Shop_Gift:
                 UIManager.Instance.Get_Shop_Gift_Item();
                 break;
+     
             default:
                 break;
         }

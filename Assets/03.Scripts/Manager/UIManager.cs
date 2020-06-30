@@ -3244,6 +3244,7 @@ public void Shop_Banner()
 
     public void Get_Shop_Gift_Item()
     {
+        Debug.Log("샵 기프트");
         AudioManager.instance.Play_Effect_Sound(Effect_Sound.gift_oppen);
 
         //메인 기프트
