@@ -305,10 +305,11 @@ public class UIManager : MonoBehaviour
 
     private Button Btn_Shop_Back;
     private Text Txt_Shop_Dia;
+    private Button Btn_Shpp_Release;
 
-#endregion
+    #endregion
 
-#region HelpPopup
+    #region HelpPopup
 
     private Button Btn_Help_Back;
     private Button Btn_Help_Item;
@@ -872,10 +873,11 @@ public class UIManager : MonoBehaviour
 #region ShopPopup
         Btn_Shop_Back = ShopPopup.transform.Find("Safe_Area/Btn_Shop_Back").GetComponent<Button>();
         Txt_Shop_Dia = ShopPopup.transform.Find("Safe_Area/Img_Shop_DiaBg/Txt_Shop_Dia").GetComponent<Text>();
-#endregion
+        Btn_Shpp_Release = ShopPopup.transform.Find("Safe_Area/Btn_Shpp_Release").GetComponent<Button>();
+        #endregion
 
 
-#region HelpPopup
+        #region HelpPopup
 
         Btn_Help_Back = HelpPopup.transform.Find("Btn_Help_Back").GetComponent<Button>();
         Btn_Help_Item = HelpPopup.transform.Find("Btn_Help_Item").GetComponent<Button>();
@@ -1454,11 +1456,11 @@ public class UIManager : MonoBehaviour
         Btn_Shop_Back.onClick.AddListener(() => PopPopup());
         Btn_Shop_Back.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_close));
         Btn_Shop_Back.onClick.AddListener(() => Shop_Banner());
+        Btn_Shpp_Release.onClick.AddListener(() => IAPManager.Instance.Restorepurchase());
 
+        #endregion
 
-#endregion
-
-#region HelpPopup
+        #region HelpPopup
 
         Btn_Help_Back.onClick.AddListener(() => PopPopup());
         Btn_Help_Back.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_close));

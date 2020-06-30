@@ -322,14 +322,42 @@ public class IAPManager : MonoBehaviour, IStoreListener
 
     }
 
+    public void ReleaseIAP() {
+
+        foreach (string productId in android_ProductIds)
+        {
+            Product p = controller.products.WithID(productId);
+
+            //isPurchaseUnderProcess = true;
+
+            if (p != null)
+            {
+                Debug.Log("구매한 거 " + p.definition.id);
+                controller.ConfirmPendingPurchase(p);
+            }
+          
+        }
+    }
+
     public void Restorepurchase()
     {
-        if (Application.platform == RuntimePlatform.IPhonePlayer || Application.platform == RuntimePlatform.OSXPlayer)
-        {
-            Debug.Log("구매 복구");
-            var apple = extensions.GetExtension<IAppleExtensions>();
-            apple.RestoreTransactions(result => Debug.Log("복구 시도 결과 " + result));
-        }
+        
+        //if (Application.platform == RuntimePlatform.IPhonePlayer || Application.platform == RuntimePlatform.OSXPlayer)
+        //{
+            extensions.GetExtension<IAppleExtensions>().RestoreTransactions(result => {
+                if (result)
+                {
+                    // This does not mean anything was restored,
+                    // merely that the restoration process succeeded.
+                    Debug.Log("구매 복원 성공");
+                }
+                else
+                {
+                    // Restoration failed.
+                    Debug.Log("구매 복원 실패");
+                }
+            });
+        //}
     }
 
     public bool HadPurchased(string productId)

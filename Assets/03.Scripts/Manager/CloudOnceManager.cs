@@ -81,10 +81,6 @@ public class CloudOnceManager : MonoBehaviour
 
             UIManager.Instance.Check_Daily();
 
-            UIManager.Instance.Start_TxtStat(false);
-
-            UIManager.Instance.End_TxtStat(false);
-
         }
 
      
