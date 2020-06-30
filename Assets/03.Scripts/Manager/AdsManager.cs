@@ -75,14 +75,8 @@ public class AdsManager : MonoBehaviour
         string adUnitId = "unexpected_platform";
 #endif
 
-        // Clean up banner ad before creating a new one.
-        if (this.bannerBtmView != null)
-        {
-            this.bannerBtmView.Destroy();
-        }
-
         // Create a 320x50 banner at the top of the screen.
-        this.bannerBtmView = new BannerView(adUnitId, AdSize.Banner, AdPosition.Bottom);
+        this.bannerBtmView = new BannerView(adUnitId, AdSize.Banner, AdPosition.Center);
 
         // Register for ad events.
         this.bannerBtmView.OnAdLoaded += this.HandleAdLoaded;
@@ -90,7 +84,7 @@ public class AdsManager : MonoBehaviour
         this.bannerBtmView.OnAdOpening += this.HandleAdOpened;
         this.bannerBtmView.OnAdClosed += this.HandleAdClosed;
         this.bannerBtmView.OnAdLeavingApplication += this.HandleAdLeftApplication;
-
+        Debug.Log("하단 배너");
         // Load a banner ad.
         this.bannerBtmView.LoadAd(this.CreateAdRequest());
     }
@@ -107,12 +101,6 @@ public class AdsManager : MonoBehaviour
         string adUnitId = "unexpected_platform";
 #endif
 
-        // Clean up banner ad before creating a new one.
-        if (this.bannerTopView != null)
-        {
-            this.bannerTopView.Destroy();
-        }
-
         // Create a 320x50 banner at the top of the screen.
         this.bannerTopView = new BannerView(adUnitId, AdSize.MediumRectangle, AdPosition.Top);
 
@@ -122,6 +110,7 @@ public class AdsManager : MonoBehaviour
         this.bannerTopView.OnAdOpening += this.HandleAdOpened;
         this.bannerTopView.OnAdClosed += this.HandleAdClosed;
         this.bannerTopView.OnAdLeavingApplication += this.HandleAdLeftApplication;
+        Debug.Log("상단 배너");
 
         // Load a banner ad.
         this.bannerTopView.LoadAd(this.CreateAdRequest());
@@ -140,13 +129,11 @@ public class AdsManager : MonoBehaviour
 
         if (isActive)
         {
-            Debug.Log("밑에 광고");
             bannerBtmView.Show();
             bannerTopView.Hide();
         }
         else
         {
-            Debug.Log("위에 광고");
             bannerBtmView.Hide();
             bannerTopView.Show();
         }
@@ -262,27 +249,25 @@ public class AdsManager : MonoBehaviour
 
     public void HandleAdLoaded(object sender, EventArgs args)
     {
-        MonoBehaviour.print("HandleAdLoaded event received");
+        Debug.Log("배너 로드 성공");
     }
 
     public void HandleAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
     {
-        MonoBehaviour.print("HandleFailedToReceiveAd event received with message: " + args.Message);
+        Debug.Log("배너 로드 실패");
+
     }
 
     public void HandleAdOpened(object sender, EventArgs args)
     {
-        MonoBehaviour.print("HandleAdOpened event received");
     }
 
     public void HandleAdClosed(object sender, EventArgs args)
     {
-        MonoBehaviour.print("HandleAdClosed event received");
     }
 
     public void HandleAdLeftApplication(object sender, EventArgs args)
     {
-        MonoBehaviour.print("HandleAdLeftApplication event received");
     }
 
     #endregion

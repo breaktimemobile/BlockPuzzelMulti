@@ -77,16 +77,4 @@ public class AESCrypto : MonoBehaviour
         return plainString;
     }
 
-    // 적용 예제
-    void Start()
-    {
-        string str = "원본 문자 정보";
-        Debug.Log("plain : " + str);
-
-        string str1 = AESEncrypt128(str);
-        Debug.Log("AES128 encrypted : " + str1);
-
-        string str2 = AESDecrypt128(str1);
-        Debug.Log("AES128 decrypted : " + str2);
-    }
 }

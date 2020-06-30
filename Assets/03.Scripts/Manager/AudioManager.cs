@@ -123,7 +123,7 @@ public class AudioManager : MonoBehaviour
             default:
                 break;
         }
-        Debug.Log("Musicsdssdsd");
+
         musicSource.Play();
     }
 

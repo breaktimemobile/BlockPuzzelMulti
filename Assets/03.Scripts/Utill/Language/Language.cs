@@ -86,15 +86,11 @@ public class Language
 
         if (data == null)
         {
-            Debug.Log("<color=yellow>None</color>");
-
             return null;
 
         }
         else
         {
-            Debug.Log("<color=red>" + data[Change_language(@int)].ToString() + "</color>");
-
             return data[Change_language(@int)].ToString();
 
         }
@@ -125,7 +121,7 @@ public class Language
         }
 
         string path;
-        Debug.Log("langgg   " + id);
+
         if (id == SystemLanguage.Korean)
         {
             path = "font/Binggrae-Bold";

@@ -68,7 +68,6 @@ public class IAPManager : MonoBehaviour, IStoreListener
 
     private void InitStore()
     {
-        Debug.Log("결제 인증 시작");
 
         if (IsInitialized())
             return;
@@ -78,14 +77,14 @@ public class IAPManager : MonoBehaviour, IStoreListener
         ConfigurationBuilder builder = ConfigurationBuilder.Instance(StandardPurchasingModule.Instance());
 
 #if UNITY_ANDROID
-        Debug.Log("안드로이드 결제 인증 시작");
+
         foreach (var item in android_ProductIds)
         {
             builder.AddProduct(item, ProductType.Consumable);
         }
+
 #elif UNITY_IOS
 
-        Debug.Log("아이폰 결제 인증 시작");
         foreach (var item in ios_ProductIds)
         {
             builder.AddProduct(item, ProductType.Consumable);
@@ -101,12 +100,8 @@ public class IAPManager : MonoBehaviour, IStoreListener
     void IStoreListener.OnInitialized(IStoreController controller, IExtensionProvider extensions)
     {
 
-        Debug.Log("아이폰 결제 완료");
-
         this.controller = controller;
         this.extensions = extensions;
-
-        Debug.Log("결제 초기화 개수 " + controller.products.all.Length);
 
         foreach (var item in controller.products.all)
         {
@@ -124,7 +119,6 @@ public class IAPManager : MonoBehaviour, IStoreListener
 
     void IStoreListener.OnInitializeFailed(InitializationFailureReason error)
     {
-        Debug.Log("초기화 실패");
 
     }
 
@@ -133,13 +127,7 @@ public class IAPManager : MonoBehaviour, IStoreListener
         if (!UIManager.Instance.Check_Network())
             return;
 
-        Debug.Log("결제 클릭   " + index);
-
-
 #if UNITY_ANDROID
-
-
-        Debug.Log("안드로이드 시작   ");
 
         if (controller != null)
         {
@@ -174,7 +162,6 @@ public class IAPManager : MonoBehaviour, IStoreListener
 
     PurchaseProcessingResult IStoreListener.ProcessPurchase(PurchaseEventArgs e)
     {
-        Debug.Log("구매 완료");
 
 #if UNITY_ANDROID
         for (int i = 0; i < android_ProductIds.Length; i++)
@@ -296,7 +283,6 @@ public class IAPManager : MonoBehaviour, IStoreListener
     {
         if (!error.Equals(PurchaseFailureReason.UserCancelled))
         {
-            Debug.Log("구매 실패");
 
         }
     }
@@ -332,7 +318,6 @@ public class IAPManager : MonoBehaviour, IStoreListener
 
             if (p != null)
             {
-                Debug.Log("구매한 거 " + p.definition.id);
                 controller.ConfirmPendingPurchase(p);
             }
           

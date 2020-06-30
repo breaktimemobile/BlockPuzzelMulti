@@ -68,7 +68,6 @@ public class JsonRead : MonoBehaviour
                 string aes = AESCrypto.instance.AESDecrypt128(str);
 
                 var data = JsonUtility.FromJson<State_Player>(aes);
-                Debug.Log("데이터 크리스탈" + data.Check_Review);
 
                 playerInfoSave = data;
             }

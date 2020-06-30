@@ -531,8 +531,6 @@ public class UIManager : MonoBehaviour
         AddListener();
         //LanguageManager.Instance.Get_Language();
 
-        Debug.Log(Application.systemLanguage);
-
         DataManager.Instance.Get_Json_Data();
 
         Language.Change_language((SystemLanguage)DataManager.Instance.state_Player.language);
@@ -1680,7 +1678,7 @@ public class UIManager : MonoBehaviour
         #endregion
 
         #region TutoMsgPopup
-        Debug.Log("Btn_TutoMsg_Back " + Btn_TutoMsg_Back.Count);
+
         foreach (var item in Btn_TutoMsg_Back)
         {
             item.onClick.AddListener(() => PopPopup());
@@ -2053,7 +2051,6 @@ public class UIManager : MonoBehaviour
     {
         stage_Infos = Tr_Stage_Content.GetComponentsInChildren<Stage_Info>().ToList();
 
-        Debug.Log("    " + stage_Infos.Count);
         for (int i = 0; i < stage_Infos.Count; i++)
         {
             if (i < DataManager.Instance.stage_data.Count)
@@ -3570,7 +3567,6 @@ public class UIManager : MonoBehaviour
     public void Check_Daily()
     {
         DateTime daily;
-        Debug.Log(DataManager.Instance.state_Player.daily);
 
         //처음 접속
         if (DataManager.Instance.state_Player.daily == "")
@@ -3663,12 +3659,10 @@ public class UIManager : MonoBehaviour
             }
             else
             {
-                Debug.Log(DataManager.Instance.state_Player.daily);
 
                 //오늘 선물 받음
 
                 daily = Convert.ToDateTime(DataManager.Instance.state_Player.daily);
-                Debug.Log(daily.Day + "   " + DateTime.Now.Day);
                 if (daily.Day != DateTime.Now.Day)
                 {
                     DataManager.Instance.state_Player.isDaily = false;

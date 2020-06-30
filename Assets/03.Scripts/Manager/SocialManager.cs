@@ -57,7 +57,6 @@ public class SocialManager : MonoBehaviour
    
     public void DoAutoLogin()
     {
-        Debug.Log("자동 로그인 " + PlayerPrefs.GetInt("Login", 0));
         //구글 로그인이 되어있지 않다면
         if (PlayerPrefs.GetInt("Login", 0).Equals(1))
         {
