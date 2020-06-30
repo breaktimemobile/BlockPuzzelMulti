@@ -66,9 +66,8 @@ public class AdsManager : MonoBehaviour
     private void RequestBtmBanner()
     {
         // These ad units are configured to always serve test ads.
-#if UNITY_EDITOR
-        string adUnitId = "unused";
-#elif UNITY_ANDROID
+
+#if UNITY_ANDROID
         string adUnitId = "ca-app-pub-4682698622407711/4585067879";
 #elif UNITY_IOS
         string adUnitId = "ca-app-pub-4682698622407711/6899266562";
@@ -99,12 +98,11 @@ public class AdsManager : MonoBehaviour
     private void RequestTopBanner()
     {
         // These ad units are configured to always serve test ads.
-#if UNITY_EDITOR
-        string adUnitId = "unused";
-#elif UNITY_ANDROID
+
+#if UNITY_ANDROID
         string adUnitId = "ca-app-pub-4682698622407711/4585067879";
 #elif UNITY_IOS
-        string adUnitId = "ca-app-pub-4682698622407711/6899266562";
+        string adUnitId = "ca-app-pub-4682698622407711/3143854389";
 #else
         string adUnitId = "unexpected_platform";
 #endif
