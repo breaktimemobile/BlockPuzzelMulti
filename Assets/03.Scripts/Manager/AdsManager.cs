@@ -76,7 +76,7 @@ public class AdsManager : MonoBehaviour
 #endif
 
         // Create a 320x50 banner at the top of the screen.
-        this.bannerBtmView = new BannerView(adUnitId, AdSize.MediumRectangle, AdPosition.Center);
+        this.bannerBtmView = new BannerView(adUnitId, AdSize.SmartBanner, AdPosition.Center);
 
         // Register for ad events.
         this.bannerBtmView.OnAdLoaded += this.HandleAdLoaded;
