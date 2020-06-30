@@ -40,6 +40,9 @@ public class CloudOnceManager : MonoBehaviour
         }
         else
         {
+
+            isSave = false;
+
             UIManager.Instance.PopPopup();
 
             StartCoroutine("Load_Txt");
@@ -54,6 +57,7 @@ public class CloudOnceManager : MonoBehaviour
     public void CloudeSave(bool success)
     {
         Debug.Log(success?"저장 성공" : "저장 실패");
+        isSave = true;
     }
 
     public void CloudeLoad(bool success)
@@ -63,6 +67,7 @@ public class CloudOnceManager : MonoBehaviour
         if (!success)
             return;
 
+        isSave = true;
 
         string str = CloudVariables.Player_Data;
 
@@ -86,13 +91,24 @@ public class CloudOnceManager : MonoBehaviour
      
     }
 
+    bool isSave = false;
+
     IEnumerator Save_Txt()
     {
         UIManager.Instance.Start_TxtStat(true);
 
         yield return new WaitForSeconds(2.0f);
 
-        UIManager.Instance.End_TxtStat(true);
+        while (true)
+        {
+            if (isSave)
+            {
+                UIManager.Instance.End_TxtStat(true);
+
+                yield return null;
+
+            }
+        }
 
     }
 
@@ -102,7 +118,15 @@ public class CloudOnceManager : MonoBehaviour
 
         yield return new WaitForSeconds(2.0f);
 
-        UIManager.Instance.End_TxtStat(false);
+        while (true)
+        {
+            if (isSave)
+            {
+                UIManager.Instance.End_TxtStat(false);
+                yield return null;
+
+            }
+        }
 
     }
 
@@ -117,6 +141,8 @@ public class CloudOnceManager : MonoBehaviour
         }
         else
         {
+            isSave = false;
+
             UIManager.Instance.PopPopup();
 
             StartCoroutine("Save_Txt");
