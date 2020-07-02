@@ -326,27 +326,12 @@ public class IAPManager : MonoBehaviour, IStoreListener
 
     public void Restorepurchase()
     {
-        
-        //if (Application.platform == RuntimePlatform.IPhonePlayer || Application.platform == RuntimePlatform.OSXPlayer)
-        //{
+
             extensions.GetExtension<IAppleExtensions>().RestoreTransactions(result => {
 
                 UIManager.Instance.Restore_Popup(result);
-
-                //if (result)
-                //{
-                //    // This does not mean anything was restored,
-                //    // merely that the restoration process succeeded.
-                //    Debug.Log("구매 복원 성공");
-                //    UIManager.Instance.Restore_Popup(result);
-                //}
-                //else
-                //{
-                //    // Restoration failed.
-                //    Debug.Log("구매 복원 실패");
-                //}
+                
             });
-        //}
     }
 
     public bool HadPurchased(string productId)

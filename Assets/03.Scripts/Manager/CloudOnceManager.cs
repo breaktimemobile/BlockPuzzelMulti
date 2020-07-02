@@ -104,10 +104,11 @@ public class CloudOnceManager : MonoBehaviour
             if (isSave)
             {
                 UIManager.Instance.End_TxtStat(true);
-
-                yield return null;
+                break;
 
             }
+            yield return null;
+
         }
 
     }
@@ -123,9 +124,11 @@ public class CloudOnceManager : MonoBehaviour
             if (isSave)
             {
                 UIManager.Instance.End_TxtStat(false);
-                yield return null;
+                break;
 
             }
+            yield return null;
+
         }
 
     }
