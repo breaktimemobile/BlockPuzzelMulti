@@ -1126,9 +1126,9 @@ public class UIManager : MonoBehaviour
         Btn_Classic.onClick.AddListener(() =>
         {
             gameMode = GameMode.Classic;
-            Play_Game(gameMode);
+            //Play_Game(gameMode);
 
-            //PushPopup(SelectPopup);
+            PushPopup(SelectPopup);
         });
         Btn_Classic.onClick.AddListener(() => FireBaseManager.Instance.LogEvent("Main_Classic"));
         //Btn_Classic.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_rectangle));
@@ -1146,9 +1146,9 @@ public class UIManager : MonoBehaviour
         Btn_Timer.onClick.AddListener(() =>
         {
             gameMode = GameMode.Timer;
-            Play_Game(gameMode);
+            //Play_Game(gameMode);
 
-            //PushPopup(SelectPopup);
+            PushPopup(SelectPopup);
         });
         Btn_Timer.onClick.AddListener(() => FireBaseManager.Instance.LogEvent("Main_Timer"));
         Btn_Timer.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_rectangle));

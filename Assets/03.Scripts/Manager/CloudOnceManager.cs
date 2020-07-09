@@ -280,6 +280,7 @@ public class CloudOnceManager : MonoBehaviour
                 break;
         }
     }
+
     public void Show_Achievements()
     {
         if (!Social.localUser.authenticated)
