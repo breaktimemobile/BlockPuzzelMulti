@@ -76,7 +76,7 @@ public class AdsManager : MonoBehaviour
 #endif
 
         // Create a 320x50 banner at the top of the screen.
-        this.bannerBtmView = new BannerView(adUnitId, AdSize.SmartBanner, AdPosition.Bottom);
+        this.bannerBtmView = new BannerView(adUnitId, AdSize.Banner, AdPosition.Bottom);
 
         // Register for ad events.
         this.bannerBtmView.OnAdLoaded += this.HandleAdLoaded;
@@ -94,7 +94,7 @@ public class AdsManager : MonoBehaviour
         // These ad units are configured to always serve test ads.
 
 #if UNITY_ANDROID
-        string adUnitId = "ca-app-pub-4682698622407711/4585067879";
+        string adUnitId = "ca-app-pub-4682698622407711/1223924866";
 #elif UNITY_IOS
         string adUnitId = "ca-app-pub-4682698622407711/3143854389";
 #else
