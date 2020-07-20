@@ -922,8 +922,8 @@ public class UIManager : MonoBehaviour
         Img_Gift = Anim_Gift.transform.GetComponentsInChildren<Image>(true);
         Txt_Gift_Val = Anim_Gift.transform.GetComponentsInChildren<Text>(true);
 
-        Btn_Gift_Ok = GiftPopup.transform.Find("Btn_Gift_Ok").GetComponent<Button>();
-        Btn_Gift_Ads = GiftPopup.transform.Find("Btn_Gift_Ads").GetComponent<Button>();
+        Btn_Gift_Ok = GiftPopup.transform.Find("Btns/Btn_Gift_Ok").GetComponent<Button>();
+        Btn_Gift_Ads = GiftPopup.transform.Find("Btns/Btn_Gift_Ads").GetComponent<Button>();
 
         #endregion
 
@@ -1036,8 +1036,8 @@ public class UIManager : MonoBehaviour
         Img_Push_Gift = Anim_Push_Gift.transform.GetComponentsInChildren<Image>(true);
         Txt_Push_Gift_Val = Anim_Push_Gift.transform.GetComponentsInChildren<Text>(true);
 
-        Btn_Push_Gift_Ok = PushGiftPopup.transform.Find("Btn_Gift_Ok").GetComponent<Button>();
-        Btn_Push_Gift_Ads = PushGiftPopup.transform.Find("Btn_Gift_Ads").GetComponent<Button>();
+        Btn_Push_Gift_Ok = PushGiftPopup.transform.Find("Btns/Btn_Gift_Ok").GetComponent<Button>();
+        Btn_Push_Gift_Ads = PushGiftPopup.transform.Find("Btns/Btn_Gift_Ads").GetComponent<Button>();
 
         #endregion
 
@@ -1244,7 +1244,12 @@ public class UIManager : MonoBehaviour
         Btn_Pause_Replay.onClick.AddListener(() => Show_Ads = true);
         Btn_Pause_Replay.onClick.AddListener(() => AdsManager.Instance.ShowInterstitial());
 
+#if UNITY_ANDROID
         Btn_Pause_Review.onClick.AddListener(() => Application.OpenURL("https://play.google.com/store/apps/details?id=com.block.puzzle.puzzlegame.multiplayer.tetris"));
+#elif UNITY_IOS
+        Btn_Pause_Review.onClick.AddListener(() => Device.RequestStoreReview());
+#endif
+
         Btn_Pause_Review.onClick.AddListener(() => FireBaseManager.Instance.LogEvent("Pause_Review"));
 
         Btn_Pause_Music.onClick.AddListener(() => AudioManager.instance.ToggleMusicStatus());
@@ -1457,7 +1462,11 @@ public class UIManager : MonoBehaviour
 
         #region ReviewPopup
 
+#if UNITY_ANDROID
         Btn_Review_Ok.onClick.AddListener(() => Application.OpenURL("https://play.google.com/store/apps/details?id=com.block.puzzle.puzzlegame.multiplayer.tetris"));
+#elif UNITY_IOS
+        Btn_Review_Ok.onClick.AddListener(() => Device.RequestStoreReview());
+#endif
         Btn_Review_Ok.onClick.AddListener(() => AudioManager.instance.Play_Effect_Sound(Effect_Sound.button_square));
         Btn_Review_Ok.onClick.AddListener(() => PlayerPrefs.SetInt("REVIEW", 1));
         Btn_Review_Ok.onClick.AddListener(() => PopPopup());
@@ -3173,6 +3182,7 @@ public class UIManager : MonoBehaviour
         Txt_Ios_Title_Login.gameObject.SetActive(false);
 
 #else
+        Btn_Setting_Google_Login.gameObject.SetActive(false);
         Btn_Setting_Google_Logout.gameObject.SetActive(false);
         Txt_Google_Title_Login.gameObject.SetActive(false);
         Txt_Google_Title_Logout.gameObject.SetActive(false);

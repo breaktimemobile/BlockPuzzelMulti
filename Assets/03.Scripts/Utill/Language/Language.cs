@@ -82,16 +82,41 @@ public class Language
 
         }
 
+        Debug.Log(m_id);
+
         Dictionary<string, object> data = Language.GetInstance().Language_data.Find(x => x["key"].Equals(m_id));
 
         if (data == null)
         {
+            Debug.Log("데이터 없음");
+
             return null;
 
         }
         else
         {
-            return data[Change_language(@int)].ToString();
+            string[] sp = data[Change_language(@int)].ToString().Split('_');
+
+            string da = "";
+
+            for (int i = 0; i < sp.Length; i++)
+            {
+                if (i == (sp.Length -1))
+                {
+                    da += sp[i];
+
+                }
+                else
+                {
+                    da += sp[i] + "\n";
+
+                }
+
+            }
+
+            Debug.Log(da);
+
+            return da;
 
         }
 
