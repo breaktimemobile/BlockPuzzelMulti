@@ -168,7 +168,7 @@ PlayerSettings:
     Android: com.block.puzzle.puzzlegame.multiplayer.tetris
     Standalone: com.Company.ProductName
   buildNumber: {}
-  AndroidBundleVersionCode: 45
+  AndroidBundleVersionCode: 46
   AndroidMinSdkVersion: 21
   AndroidTargetSdkVersion: 29
   AndroidPreferredInstallLocation: 1
